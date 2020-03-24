@@ -8,6 +8,8 @@ import kotlinx.serialization.json.JsonObject
 import org.slf4j.LoggerFactory
 import java.io.*
 import java.nio.charset.Charset
+import java.nio.file.Files
+import java.nio.file.Path
 
 fun main() {
    /*val dataPath = "${System.getenv("HOME")}/Downloads/underenheter_alle.json"
@@ -24,10 +26,12 @@ private val log = LoggerFactory.getLogger(EnhetsregisterIndexedJson::class.java)
 class EnhetsregisterIndexedJson(
    private val jsonfilnavn:String) {
 
+   val lastModified:Long
    private val json = Json(JsonConfiguration.Stable)
    private val index: Map<String, Pair<Long, Long>>
 
    init {
+      lastModified = File(jsonfilnavn).lastModified()
       index = createIndex()
    }
 
@@ -39,6 +43,16 @@ class EnhetsregisterIndexedJson(
          file.read(bytes)
          val jsonData = String(bytes, Charset.forName("UTF-8"))
          return json.parseJson(jsonData).jsonObject
+      }
+   }
+
+   internal fun deleteUnderlyingFile() {
+      log.info("deleting $jsonfilnavn")
+      try {
+         Files.delete(Path.of(jsonfilnavn))
+         log.info("deleted $jsonfilnavn")
+      } catch (ex: IOException) {
+         log.warn("unable to delete $jsonfilnavn", ex)
       }
    }
 

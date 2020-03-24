@@ -24,7 +24,7 @@ class EnhetsregisteretOfflineTest {
     @Test
     fun `offline oppslag skal fungere`() {
         runBlocking {
-            val data = enhetsregisteret.lookupOrg(OrgNr("995298775"))
+            val data = enhetsregisteret.hentUnderenhet(OrgNr("995298775"))
             assertNotNull(data)
             assertEquals("995298775", data["organisasjonsnummer"]!!.content)
         }

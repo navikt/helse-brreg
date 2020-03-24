@@ -29,11 +29,15 @@ fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 private val log = LoggerFactory.getLogger("no.nav.helse.brreg.Application")
 
 private val collectorRegistry = CollectorRegistry.defaultRegistry
-private val instrumentation = Instrumentation(collectorRegistry)
+internal val instrumentation = Instrumentation(collectorRegistry)
 
 fun Application.brregModule(
-    alleEnheter: EnhetsregisterIndexedJson = EnhetsregisterIndexedJson(brregJsonAlleEnheter),
-    alleUnderenheter: EnhetsregisterIndexedJson = EnhetsregisterIndexedJson(brregJsonAlleUnderenheter)
+    enhetsregisteret: EnhetsregisteretOffline =
+        EnhetsregisteretOffline(
+            instrumentation = instrumentation,
+            alleEnheter = EnhetsregisterIndexedJson(brregJsonAlleEnheter),
+            alleUnderenheter = EnhetsregisterIndexedJson(brregJsonAlleUnderenheter)
+        )
 ) {
     install(MicrometerMetrics) {
         registry = PrometheusMeterRegistry(
@@ -56,11 +60,11 @@ fun Application.brregModule(
         get("/enhetsregisteret/api/underenheter/{orgnr}") {
             val orgnr = try {
                 OrgNr(call.parameters["orgnr"]!!)
-            } catch (ex:IllegalArgumentException) {
+            } catch (ex: IllegalArgumentException) {
                 call.respond(HttpStatusCode.BadRequest, "ugyldig orgnr")
                 return@get
             }
-            val data = alleUnderenheter.lookupOrg(orgnr)
+            val data = enhetsregisteret.hentUnderenhet(orgnr)
             if (null == data) {
                 call.respond(HttpStatusCode.NotFound, "fant ikke organisasjon")
                 return@get
@@ -72,11 +76,11 @@ fun Application.brregModule(
         get("/enhetsregisteret/api/enheter/{orgnr}") {
             val orgnr = try {
                 OrgNr(call.parameters["orgnr"]!!)
-            } catch (ex:IllegalArgumentException) {
+            } catch (ex: IllegalArgumentException) {
                 call.respond(HttpStatusCode.BadRequest, "ugyldig orgnr")
                 return@get
             }
-            val data = alleEnheter.lookupOrg(orgnr)
+            val data = enhetsregisteret.hentEnhet(orgnr)
             if (null == data) {
                 call.respond(HttpStatusCode.NotFound, "fant ikke organisasjon")
                 return@get
