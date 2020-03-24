@@ -1,0 +1,54 @@
+[
+  {
+    "organisasjonsnummer": "971524553",
+    "navn": "NAV INTERNASJONALT",
+    "organisasjonsform": {
+      "kode": "ORGL",
+      "beskrivelse": "Organisasjonsledd",
+      "links": []
+    },
+    "hjemmeside": "www.trygdeetaten.no/",
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0033",
+      "poststed": "OSLO",
+      "adresse": [
+        "Postboks 8138 DEP"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-02-20",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Trygdeordninger underlagt offentlig forvaltning",
+      "kode": "84.300"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "991012206",
+    "forretningsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0653",
+      "poststed": "OSLO",
+      "adresse": [
+        "Hagegata 23"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "institusjonellSektorkode": {
+      "kode": "6100",
+      "beskrivelse": "Statsforvaltningen"
+    },
+    "registrertIForetaksregisteret": false,
+    "registrertIStiftelsesregisteret": false,
+    "registrertIFrivillighetsregisteret": false,
+    "konkurs": false,
+    "underAvvikling": false,
+    "underTvangsavviklingEllerTvangsopplosning": false,
+    "maalform": "Bokmål",
+    "links": []
+  }
+]

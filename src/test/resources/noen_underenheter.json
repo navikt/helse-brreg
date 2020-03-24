@@ -1,0 +1,1101 @@
+[
+  {
+    "organisasjonsnummer": "974486725",
+    "navn": "KRANBILEN RAUMA-GUDFINNUR EINARSSON",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-13",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Kombinert husdyrhold og planteproduksjon",
+      "kode": "01.500"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974419807",
+    "oppstartsdato": "1995-04-27",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "6320",
+      "poststed": "ISFJORDEN",
+      "adresse": [
+        "Kavlivegen 23"
+      ],
+      "kommune": "RAUMA",
+      "kommunenummer": "1539"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974487500",
+    "navn": "INTERIØRMAKERN Bjørnar Grunnfoss",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-13",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Malerarbeid",
+      "kode": "43.341"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974419904",
+    "oppstartsdato": "1995-03-15",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8403",
+      "poststed": "SORTLAND",
+      "adresse": [
+        "Gunsteins vei 14"
+      ],
+      "kommune": "SORTLAND",
+      "kommunenummer": "1870"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974487942",
+    "navn": "GUNNARS MAL & SNEKKERSERVICE Pedersen",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-13",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Oppføring av bygninger",
+      "kode": "41.200"
+    },
+    "antallAnsatte": 1,
+    "overordnetEnhet": "874420352",
+    "oppstartsdato": "1995-02-15",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "7072",
+      "poststed": "HEIMDAL",
+      "adresse": [
+        "Jarveien 15B"
+      ],
+      "kommune": "TRONDHEIM",
+      "kommunenummer": "5001"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974491508",
+    "navn": "TORE ELLING VARTDAL",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-14",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Kombinert husdyrhold og planteproduksjon",
+      "kode": "01.500"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974391791",
+    "oppstartsdato": "1994-12-31",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "6170",
+      "poststed": "VARTDAL",
+      "adresse": [
+        "Ospholvegen 56"
+      ],
+      "kommune": "ØRSTA",
+      "kommunenummer": "1520"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974491664",
+    "navn": "KISS MARIT H. ENDRESEN",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "hjemmeside": "www.marit.endresen.marykaynorway.no",
+    "registreringsdatoEnhetsregisteret": "1995-06-14",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Frisering og annen skjønnhetspleie",
+      "kode": "96.020"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974422360",
+    "oppstartsdato": "1995-05-02",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0252",
+      "poststed": "OSLO",
+      "adresse": [
+        "Lille Stranden 8"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974491850",
+    "navn": "PIAS BALLETTSTUDIO",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8003",
+      "poststed": "BODØ",
+      "adresse": [
+        "Evald Erlandsens vei 10"
+      ],
+      "kommune": "BODØ",
+      "kommunenummer": "1804"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-15",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Undervisning i kunstfag",
+      "kode": "85.522"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "982033268",
+    "oppstartsdato": "1995-03-01",
+    "datoEierskifte": "2000-07-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8014",
+      "poststed": "BODØ",
+      "adresse": [
+        "Skiviklia 46"
+      ],
+      "kommune": "BODØ",
+      "kommunenummer": "1804"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974492148",
+    "navn": "CATHARINA HORN AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-15",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Andre kombinerte tjenester tilknyttet eiendomsdrift",
+      "kode": "81.109"
+    },
+    "antallAnsatte": 1,
+    "overordnetEnhet": "974421399",
+    "oppstartsdato": "1995-04-28",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0267",
+      "poststed": "OSLO",
+      "adresse": [
+        "v/ Vibecke Horn",
+        "Frogner terrasse 9"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974494469",
+    "navn": "HALSNE TORJUS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-17",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Produksjon av fôrvarer til husdyrhold",
+      "kode": "10.910"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974423561",
+    "oppstartsdato": "1995-04-05",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "4134",
+      "poststed": "JØSENFJORDEN",
+      "adresse": [
+        "Ulladalen 507"
+      ],
+      "kommune": "SULDAL",
+      "kommunenummer": "1134"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974494523",
+    "navn": "OLA HENRIK BRUN",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-17",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Hav- og kystfiske",
+      "kode": "03.111"
+    },
+    "antallAnsatte": 10,
+    "overordnetEnhet": "974365596",
+    "oppstartsdato": "1995-05-02",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8430",
+      "poststed": "MYRE",
+      "adresse": [
+        "Klo"
+      ],
+      "kommune": "ØKSNES",
+      "kommunenummer": "1868"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974496100",
+    "navn": "HERFINN LORENTZEN",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-19",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Melkeproduksjon på storfe",
+      "kode": "01.410"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974363771",
+    "oppstartsdato": "1994-01-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8725",
+      "poststed": "UTSKARPEN",
+      "adresse": [
+        "Nesnaveien 938"
+      ],
+      "kommune": "RANA",
+      "kommunenummer": "1833"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974496240",
+    "navn": "BJARTE FRIIS FRIISVOLD",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-19",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Oppdrett av annet storfe",
+      "kode": "01.420"
+    },
+    "naeringskode2": {
+      "beskrivelse": "Avvirkning",
+      "kode": "02.200"
+    },
+    "naeringskode3": {
+      "beskrivelse": "Saging, høvling og impregnering av tre",
+      "kode": "16.100"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "980540960",
+    "oppstartsdato": "1995-05-02",
+    "datoEierskifte": "1999-01-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "6350",
+      "poststed": "EIDSBYGDA",
+      "adresse": [],
+      "kommune": "RAUMA",
+      "kommunenummer": "1539"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974497107",
+    "navn": "JARLE AAS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-19",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Reparasjon og vedlikehold av skip og båter",
+      "kode": "33.150"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974428261",
+    "oppstartsdato": "1995-05-04",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "6390",
+      "poststed": "VESTNES",
+      "adresse": [
+        "Vestnesbukt"
+      ],
+      "kommune": "VESTNES",
+      "kommunenummer": "1535"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974497247",
+    "navn": "BOPLASS AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-19",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Oppføring av bygninger",
+      "kode": "41.200"
+    },
+    "antallAnsatte": 2,
+    "overordnetEnhet": "992366370",
+    "oppstartsdato": "1995-01-01",
+    "datoEierskifte": "2008-02-15",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "4053",
+      "poststed": "RÆGE",
+      "adresse": [
+        "Vigdelsvegen 406"
+      ],
+      "kommune": "SOLA",
+      "kommunenummer": "1124"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974497727",
+    "navn": "PETTER DASSGT. 3 AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8651",
+      "poststed": "MOSJØEN",
+      "adresse": [
+        "Postboks 130"
+      ],
+      "kommune": "VEFSN",
+      "kommunenummer": "1824"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-19",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Utleie av egen eller leid fast eiendom ellers",
+      "kode": "68.209"
+    },
+    "antallAnsatte": 1,
+    "overordnetEnhet": "974432080",
+    "oppstartsdato": "1995-05-08",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8656",
+      "poststed": "MOSJØEN",
+      "adresse": [
+        "Petter Dass gate 3"
+      ],
+      "kommune": "VEFSN",
+      "kommunenummer": "1824"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974499347",
+    "navn": "HELGE MÆLE",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "4137",
+      "poststed": "ÅRDAL I RYFYLKE",
+      "adresse": [
+        "Melevegen 30"
+      ],
+      "kommune": "HJELMELAND",
+      "kommunenummer": "1133"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-20",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Melkeproduksjon på storfe",
+      "kode": "01.410"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974441543",
+    "oppstartsdato": "1995-04-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "4137",
+      "poststed": "ÅRDAL I RYFYLKE",
+      "adresse": [],
+      "kommune": "HJELMELAND",
+      "kommunenummer": "1133"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974499436",
+    "navn": "KITTY ENSBY",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "hjemmeside": "www.kitty.no",
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0365",
+      "poststed": "OSLO",
+      "adresse": [
+        "Sorgenfrigata 37A"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-20",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Grafisk og visuell kommunikasjonsdesign",
+      "kode": "74.102"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974441594",
+    "oppstartsdato": "1995-04-15",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0351",
+      "poststed": "OSLO",
+      "adresse": [
+        "Josefines gate 26"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974499983",
+    "navn": "BJØRN HARRY RØYLAND/ VILLMARKSREISER",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-20",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Sauehold",
+      "kode": "01.451"
+    },
+    "naeringskode2": {
+      "beskrivelse": "Avvirkning",
+      "kode": "02.200"
+    },
+    "naeringskode3": {
+      "beskrivelse": "Opplevelsesaktiviteter",
+      "kode": "93.291"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "874404322",
+    "oppstartsdato": "1995-05-09",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "4460",
+      "poststed": "MOI",
+      "adresse": [
+        "Tjellesvik"
+      ],
+      "kommune": "LUND",
+      "kommunenummer": "1112"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974500051",
+    "navn": "OBJEKT DESIGN Vidar Bråten",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-20",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Industridesign, produktdesign og annen teknisk designvirksomhet",
+      "kode": "74.101"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974381028",
+    "oppstartsdato": "1995-05-18",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0494",
+      "poststed": "OSLO",
+      "adresse": [
+        "Myrerveien 44B"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974502976",
+    "navn": "PARTREDERIET SKÅNSVIK ANS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8380",
+      "poststed": "RAMBERG",
+      "adresse": [
+        "Skjelfjordveien 17"
+      ],
+      "kommune": "FLAKSTAD",
+      "kommunenummer": "1859"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Hav- og kystfiske",
+      "kode": "03.111"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974425254",
+    "oppstartsdato": "1995-05-03",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8388",
+      "poststed": "RAMBERG",
+      "adresse": [
+        "Skjelfjord"
+      ],
+      "kommune": "FLAKSTAD",
+      "kommunenummer": "1859"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974503808",
+    "navn": "DS SERVICE SVEIS AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Bearbeiding av metaller",
+      "kode": "25.620"
+    },
+    "antallAnsatte": 2,
+    "overordnetEnhet": "919606738",
+    "oppstartsdato": "1995-01-01",
+    "datoEierskifte": "2017-09-11",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "4072",
+      "poststed": "RANDABERG",
+      "adresse": [
+        "Strandbakken 1"
+      ],
+      "kommune": "RANDABERG",
+      "kommunenummer": "1127"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974504065",
+    "navn": "JERN OG BÅT AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8439",
+      "poststed": "MYRE",
+      "adresse": [
+        "Postboks 164"
+      ],
+      "kommune": "ØKSNES",
+      "kommunenummer": "1868"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Butikkhandel med jernvarer",
+      "kode": "47.522"
+    },
+    "antallAnsatte": 3,
+    "overordnetEnhet": "874430242",
+    "oppstartsdato": "1995-05-10",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8430",
+      "poststed": "MYRE",
+      "adresse": [
+        "Storgata 9"
+      ],
+      "kommune": "ØKSNES",
+      "kommunenummer": "1868"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974505665",
+    "navn": "OLE ENGE BOTTEN AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Revisjon",
+      "kode": "69.202"
+    },
+    "antallAnsatte": 3,
+    "overordnetEnhet": "974439875",
+    "oppstartsdato": "1995-01-02",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "6600",
+      "poststed": "SUNNDALSØRA",
+      "adresse": [
+        "Sunndalsvegen 6"
+      ],
+      "kommune": "SUNNDAL",
+      "kommunenummer": "1563"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974505967",
+    "navn": "VARMETEKNIKK AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0614",
+      "poststed": "OSLO",
+      "adresse": [
+        "Postboks 6    Alnabru"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Engroshandel med jernvarer, rørleggerartikler og oppvarmingsutstyr",
+      "kode": "46.740"
+    },
+    "antallAnsatte": 8,
+    "overordnetEnhet": "974442272",
+    "oppstartsdato": "1995-06-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0582",
+      "poststed": "OSLO",
+      "adresse": [
+        "Brobekkveien 101"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974506866",
+    "navn": "ADB TJENESTER AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "6151",
+      "poststed": "ØRSTA",
+      "adresse": [
+        "Postboks 97"
+      ],
+      "kommune": "ØRSTA",
+      "kommunenummer": "1520"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Konsulentvirksomhet tilknyttet informasjonsteknologi",
+      "kode": "62.020"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974446685",
+    "oppstartsdato": "1995-05-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "6154",
+      "poststed": "ØRSTA",
+      "adresse": [
+        "Smiebakkane 7"
+      ],
+      "kommune": "ØRSTA",
+      "kommunenummer": "1520"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974507234",
+    "navn": "STEIN MASKINLAG SA",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Tjenester tilknyttet planteproduksjon",
+      "kode": "01.610"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974449056",
+    "oppstartsdato": "1995-05-18",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "7740",
+      "poststed": "STEINSDALEN",
+      "adresse": [],
+      "kommune": "OSEN",
+      "kommunenummer": "5020"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974507757",
+    "navn": "CARLBERGVEIEN 4,6 AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "hjemmeside": "www.ragde.no",
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Utleie av egen eller leid fast eiendom ellers",
+      "kode": "68.209"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974451271",
+    "oppstartsdato": "1995-05-19",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0661",
+      "poststed": "OSLO",
+      "adresse": [
+        "Gladengveien 3B"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974507951",
+    "navn": "MESTERMAT IMPORT EKSPORT AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0119",
+      "poststed": "OSLO",
+      "adresse": [
+        "Postboks 1617 Vika"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Engroshandel med bredt utvalg av nærings- og nytelsesmidler",
+      "kode": "46.390"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974452901",
+    "oppstartsdato": "1995-04-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0161",
+      "poststed": "OSLO",
+      "adresse": [
+        "Stortingsgata 22"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974508621",
+    "navn": "VINDEREN FYSIOTERAPI AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Fysioterapitjeneste",
+      "kode": "86.902"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "917269084",
+    "datoEierskifte": "2016-01-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0373",
+      "poststed": "OSLO",
+      "adresse": [
+        "Slemdalsveien 72"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974508737",
+    "navn": "BYGGLOGISTIKK AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8001",
+      "poststed": "BODØ",
+      "adresse": [
+        "Postboks 1170"
+      ],
+      "kommune": "BODØ",
+      "kommunenummer": "1804"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Engroshandel med byggevarer ikke nevnt annet sted",
+      "kode": "46.739"
+    },
+    "antallAnsatte": 2,
+    "overordnetEnhet": "974456761",
+    "oppstartsdato": "1995-05-23",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8071",
+      "poststed": "BODØ",
+      "adresse": [
+        "Ole Jensvolls vei 8"
+      ],
+      "kommune": "BODØ",
+      "kommunenummer": "1804"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974508877",
+    "navn": "MARIT ANDREASSEN",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Utøvende kunstnere og underholdningsvirksomhet innen scenekunst",
+      "kode": "90.012"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974457121",
+    "oppstartsdato": "1995-05-23",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0465",
+      "poststed": "OSLO",
+      "adresse": [
+        "Bentsegata 8"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974509458",
+    "navn": "LINE HOPSTAD",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-21",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Svinehold",
+      "kode": "01.460"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "874460222",
+    "oppstartsdato": "1995-05-24",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8255",
+      "poststed": "RØKLAND",
+      "adresse": [
+        "Storalm"
+      ],
+      "kommune": "SALTDAL",
+      "kommunenummer": "1840"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "995298775",
+    "navn": "ARBEIDS- OG VELFERDSDIREKTORATET AVD SANNERGATA",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0130",
+      "poststed": "OSLO",
+      "adresse": [
+        "Postboks 5 St Olavs plass"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "registreringsdatoEnhetsregisteret": "2010-03-16",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Offentlig administrasjon tilknyttet helsestell, sosial virksomhet, undervisning, kirke, kultur og miljøvern",
+      "kode": "84.120"
+    },
+    "antallAnsatte": 1005,
+    "overordnetEnhet": "889640782",
+    "oppstartsdato": "2010-04-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0557",
+      "poststed": "OSLO",
+      "adresse": [
+        "Sannergata 2"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  }
+]

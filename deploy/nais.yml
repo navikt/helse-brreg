@@ -1,0 +1,18 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+   name: helse-brreg
+   namespace: default
+   labels:
+      team: risk
+spec:
+   image: {{ image }}
+   replicas:
+      min: 1
+   liveness:
+      path: /isalive
+   readiness:
+      path: /isready
+   prometheus:
+      enabled: true
+      path: /metrics

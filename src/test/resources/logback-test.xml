@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+      <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+         <pattern>[%d %level %logger %mdc] - %m%n</pattern>
+      </encoder>
+   </appender>
+
+   <root level="WARN">
+      <appender-ref ref="STDOUT"/>
+   </root>
+
+   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+      <encoder>
+         <pattern>%green(%d{HH:mm:ss}) %cyan([%-8.8t]) %boldCyan(%0.-5p) %yellow(%-20.20logger{19}) %cyan(:) %m%n</pattern>
+      </encoder>
+   </appender>
+
+   <logger name="no.nav.helse" level="DEBUG" additivity="false">
+      <appender-ref ref="CONSOLE"/>
+   </logger>
+</configuration>
