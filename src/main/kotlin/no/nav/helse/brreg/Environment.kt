@@ -1,7 +1,6 @@
 package no.nav.helse.brreg
 
-//private val brregDir = "/brreg"
-private val brregDir = "${System.getenv("HOME")}/Downloads"
+private val brregDir = "/brreg"
 
 internal val brregJsonAlleUnderenheter = "$brregDir/underenheter_alle.json"
 internal val brregJsonAlleEnheter = "$brregDir/enheter_alle.json"

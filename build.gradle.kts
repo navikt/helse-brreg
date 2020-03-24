@@ -72,7 +72,7 @@ tasks.named<Jar>("jar") {
    archiveBaseName.set("app")
 
    manifest {
-      attributes["Main-Class"] = "no.nav.helse.AppKt"
+      attributes["Main-Class"] = "no.nav.helse.brreg.ApplicationKt"
       attributes["Class-Path"] = configurations.runtimeClasspath.get().joinToString(separator = " ") {
          it.name
       }
@@ -88,7 +88,7 @@ tasks.named<Jar>("jar") {
 }
 
 application {
-   mainClassName = "no.nav.helse.AppKt"
+   mainClassName = "no.nav.helse.brreg.ApplicationKt"
 }
 
 tasks.withType<Test> {
