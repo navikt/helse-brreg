@@ -15,7 +15,7 @@ class Instrumentation(registry: CollectorRegistry) {
        .register(registry)
 
    private val erstattEnhetsregisterCounter = Counter
-       .build("helseBrregErstattEnhetsregister", "nr of organization lookups")
+       .build("helseBrregErstattEnhetsregister", "antall ganger enhetene i registeret er erstattet")
        .labelNames("erstattet")
        .register(registry)
 
