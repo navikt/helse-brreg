@@ -9,10 +9,14 @@ spec:
    image: {{ image }}
    replicas:
       min: 1
+      max: 2
    liveness:
       path: /isalive
    readiness:
       path: /isready
+   resources:
+     limits:
+       memory: 1024Mi
    webproxy: true
    prometheus:
       enabled: true
