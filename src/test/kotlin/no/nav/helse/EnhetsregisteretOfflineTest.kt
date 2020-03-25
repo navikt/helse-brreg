@@ -25,6 +25,7 @@ class EnhetsregisteretOfflineTest {
     fun `offline oppslag skal fungere`() {
         runBlocking {
             val data = enhetsregisteret.hentUnderenhet(OrgNr("995298775"))
+            println("last modified = ${enhetsregisteret.lastModified()}")
             assertNotNull(data)
             assertEquals("995298775", data["organisasjonsnummer"]!!.content)
         }

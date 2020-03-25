@@ -15,6 +15,8 @@ class EnhetsregisteretOffline(
 
     fun hentUnderenhet(orgNr: OrgNr): JsonObject? = alleUnderenheter.lookupOrg(orgNr)
 
+    fun lastModified() = minOf(alleEnheter.lastModified, alleUnderenheter.lastModified)
+
     fun erstattAlleEnheter(nyAlleEnheter: EnhetsregisterIndexedJson) {
         val forrige = alleEnheter
         alleEnheter = nyAlleEnheter

@@ -37,7 +37,8 @@ fun Application.brregModule(
             instrumentation = instrumentation,
             alleEnheter = EnhetsregisterIndexedJson(brregJsonAlleEnheter),
             alleUnderenheter = EnhetsregisterIndexedJson(brregJsonAlleUnderenheter)
-        )
+        ),
+    enableDownloadScheduler: Boolean = true
 ) {
     install(MicrometerMetrics) {
         registry = PrometheusMeterRegistry(
@@ -53,6 +54,8 @@ fun Application.brregModule(
             JvmThreadMetrics()
         )
     }
+
+    if (enableDownloadScheduler) setupDownloadScheduler(enhetsregisteret)
 
     routing {
 

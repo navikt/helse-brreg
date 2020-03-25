@@ -9,6 +9,8 @@ import java.util.*
 
 fun main() {
     val enheter = EnhetsregisterDownloader.hentAlleEnheter()
+    println("-------")
+    println(enheter.lastModified)
     Thread.sleep(10000)
     enheter.deleteUnderlyingFile()
 }
@@ -36,6 +38,13 @@ class EnhetsregisterDownloader {
             log.info("pakker ut $filenameGZIP")
             ProcessBuilder()
                 .command("gunzip", filenameGZIP)
+                .redirectError(ProcessBuilder.Redirect.INHERIT)
+                .redirectOutput(ProcessBuilder.Redirect.INHERIT)
+                .start()
+                .waitFor()
+            log.info("touching $filenameJson")
+            ProcessBuilder()
+                .command("touch", filenameJson)
                 .redirectError(ProcessBuilder.Redirect.INHERIT)
                 .redirectOutput(ProcessBuilder.Redirect.INHERIT)
                 .start()

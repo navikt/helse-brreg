@@ -25,7 +25,7 @@ class AppNaisTest {
    @Test
    fun `reports isalive status for nais`() {
       withTestApplication({
-         brregModule(enhetsregisteret)
+         brregModule(enhetsregisteret, false)
       }) {
          handleRequest(HttpMethod.Get, "/isalive").apply {
             assertTrue { response.status()?.isSuccess() ?: false }
@@ -37,7 +37,7 @@ class AppNaisTest {
    @Test
    fun `reports isready status for nais`() {
       withTestApplication({
-         brregModule(enhetsregisteret)
+         brregModule(enhetsregisteret, false)
       }) {
          handleRequest(HttpMethod.Get, "/isready").apply {
             assertTrue { response.status()?.isSuccess() ?: false }
@@ -49,7 +49,7 @@ class AppNaisTest {
    @Test
    fun `reports metrics`() {
       withTestApplication({
-         brregModule(enhetsregisteret)
+         brregModule(enhetsregisteret, false)
       }) {
          handleRequest(HttpMethod.Get, "/metrics").apply {
             assertTrue { response.status()?.isSuccess() ?: false }

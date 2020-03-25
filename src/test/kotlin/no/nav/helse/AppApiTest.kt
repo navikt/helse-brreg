@@ -33,7 +33,7 @@ class AppApiTest {
     @Test
     fun `hent underenhet`() {
         withTestApplication({
-            brregModule(enhetsregisteret)
+            brregModule(enhetsregisteret, false)
         }) {
             handleRequest(HttpMethod.Get, "/enhetsregisteret/api/underenheter/995298775").apply {
                 assertTrue { response.status()?.isSuccess() ?: false }
@@ -49,7 +49,7 @@ class AppApiTest {
     @Test
     fun `hent enhet`() {
         withTestApplication({
-            brregModule(enhetsregisteret)
+            brregModule(enhetsregisteret, false)
         }) {
             handleRequest(HttpMethod.Get, "/enhetsregisteret/api/enheter/971524553").apply {
                 assertTrue { response.status()?.isSuccess() ?: false }
@@ -65,7 +65,7 @@ class AppApiTest {
     @Test
     fun `ugyldig orgnr gir 400`() {
         withTestApplication({
-            brregModule(enhetsregisteret)
+            brregModule(enhetsregisteret, false)
         }) {
             handleRequest(HttpMethod.Get, "/enhetsregisteret/api/enheter/123").apply {
                 assertEquals(HttpStatusCode.BadRequest, response.status())
@@ -76,7 +76,7 @@ class AppApiTest {
     @Test
     fun `ikkeeksisterende orgnr gir 404`() {
         withTestApplication({
-            brregModule(enhetsregisteret)
+            brregModule(enhetsregisteret, false)
         }) {
             val underenhetSomDaIkkeErEnhet = "995298775"
             handleRequest(HttpMethod.Get, "/enhetsregisteret/api/enheter/$underenhetSomDaIkkeErEnhet").apply {
