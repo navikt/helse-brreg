@@ -28,7 +28,7 @@ class EnhetsregisterIndexedJson(
 
    val lastModified:Long
    private val json = Json(JsonConfiguration.Stable)
-   private val index: Map<String, Pair<Long, Long>>
+   private val index: MutableMap<String, Pair<Long, Long>>
 
    init {
       lastModified = File(jsonfilnavn).lastModified()
@@ -48,6 +48,7 @@ class EnhetsregisterIndexedJson(
 
    internal fun deleteUnderlyingFile() {
       log.info("deleting $jsonfilnavn")
+      index.clear()
       try {
          Files.delete(Path.of(jsonfilnavn))
          log.info("deleted $jsonfilnavn")
@@ -61,7 +62,7 @@ class EnhetsregisterIndexedJson(
       EXPECT_ORGNO
    }
 
-   private fun createIndex() : Map<String, Pair<Long, Long>> {
+   private fun createIndex() : MutableMap<String, Pair<Long, Long>> {
       val jfactory = JsonFactory()
       val orgnrToPosition = mutableMapOf<String, Pair<Long, Long>>()
       jfactory.createParser(File(jsonfilnavn)).use { parser ->
