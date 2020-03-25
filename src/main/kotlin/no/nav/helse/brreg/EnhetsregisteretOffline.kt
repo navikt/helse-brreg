@@ -24,8 +24,8 @@ class EnhetsregisteretOffline(
     }
 
     fun erstattAlleUnderenheter(nyAlleUnderenheter: EnhetsregisterIndexedJson) {
-        val forrige = alleEnheter
-        alleEnheter = nyAlleUnderenheter
+        val forrige = alleUnderenheter
+        alleUnderenheter = nyAlleUnderenheter
         if (slettUnderliggendeFilVedErstatt) forrige.deleteUnderlyingFile()
     }
 }
