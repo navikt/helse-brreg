@@ -1,5 +1,6 @@
 package no.nav.helse.brreg
 
+import io.prometheus.client.Summary
 import org.slf4j.LoggerFactory
 import java.time.Instant
 import java.util.*
@@ -15,6 +16,7 @@ private fun Long.toDate() = Date.from(Instant.ofEpochMilli(this))
 
 internal fun setupDownloadScheduler(
     enhetsregisteretOffline: EnhetsregisteretOffline,
+    downloadAndIndexTimeObserver: Summary,
     maxAgeSeconds:Long = 60L * 60 * 24
 ) {
     val maxAgeMillis = maxAgeSeconds * 1000L
@@ -30,6 +32,7 @@ internal fun setupDownloadScheduler(
     scheduler.scheduleAtFixedRate({
         if (!isUpdating.get()) {
             isUpdating.set(true)
+            val timer = downloadAndIndexTimeObserver.startTimer()
             try {
                 log.info("Oppdaterer alle_underenheter")
                 enhetsregisteretOffline.erstattAlleUnderenheter(EnhetsregisterDownloader.hentAlleUnderenheter())
@@ -37,6 +40,7 @@ internal fun setupDownloadScheduler(
                 enhetsregisteretOffline.erstattAlleEnheter(EnhetsregisterDownloader.hentAlleEnheter())
                 log.info("oppdatert. Ny lastModified=${enhetsregisteretOffline.lastModified().toDate()}")
             } finally {
+                timer.observeDuration()
                 isUpdating.set(false)
             }
         }

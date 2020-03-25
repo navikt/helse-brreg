@@ -2,19 +2,9 @@ package no.nav.helse.brreg
 
 import org.slf4j.LoggerFactory
 import java.io.FileOutputStream
-import java.lang.Exception
 import java.net.URL
 import java.nio.channels.Channels
-import java.nio.channels.ReadableByteChannel
 import java.util.*
-
-fun main() {
-    val enheter = EnhetsregisterDownloader.hentAlleEnheter()
-    println("-------")
-    println(enheter.lastModified)
-    Thread.sleep(10000)
-    enheter.deleteUnderlyingFile()
-}
 
 private val log = LoggerFactory.getLogger(EnhetsregisterDownloader::class.java)
 

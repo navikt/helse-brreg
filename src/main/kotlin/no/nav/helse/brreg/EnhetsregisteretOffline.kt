@@ -1,9 +1,6 @@
 package no.nav.helse.brreg
 
 import kotlinx.serialization.json.JsonObject
-import org.slf4j.LoggerFactory
-
-private val log = LoggerFactory.getLogger(EnhetsregisteretOffline::class.java)
 
 class EnhetsregisteretOffline(
     private val instrumentation: Instrumentation,
@@ -11,9 +8,13 @@ class EnhetsregisteretOffline(
     private var alleUnderenheter: EnhetsregisterIndexedJson = EnhetsregisterIndexedJson(brregJsonAlleUnderenheter),
     private val slettUnderliggendeFilVedErstatt: Boolean = true
 ) {
-    fun hentEnhet(orgNr: OrgNr): JsonObject? = alleEnheter.lookupOrg(orgNr)
+    fun hentEnhet(orgNr: OrgNr): JsonObject? = alleEnheter.lookupOrg(orgNr).apply {
+        if (this != null) instrumentation.lookupEnhetSucceeded() else instrumentation.lookupEnhetFailed()
+    }
 
-    fun hentUnderenhet(orgNr: OrgNr): JsonObject? = alleUnderenheter.lookupOrg(orgNr)
+    fun hentUnderenhet(orgNr: OrgNr): JsonObject? = alleUnderenheter.lookupOrg(orgNr).apply {
+        if (this != null) instrumentation.lookupUnderenhetSucceeded() else instrumentation.lookupUnderenhetFailed()
+    }
 
     fun lastModified() = minOf(alleEnheter.lastModified, alleUnderenheter.lastModified)
 
@@ -21,11 +22,13 @@ class EnhetsregisteretOffline(
         val forrige = alleEnheter
         alleEnheter = nyAlleEnheter
         if (slettUnderliggendeFilVedErstatt) forrige.deleteUnderlyingFile()
+        instrumentation.erstattetEnheter()
     }
 
     fun erstattAlleUnderenheter(nyAlleUnderenheter: EnhetsregisterIndexedJson) {
         val forrige = alleUnderenheter
         alleUnderenheter = nyAlleUnderenheter
         if (slettUnderliggendeFilVedErstatt) forrige.deleteUnderlyingFile()
+        instrumentation.erstattetUnderenheter()
     }
 }

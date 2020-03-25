@@ -1,7 +1,6 @@
 package no.nav.helse
 
 import io.prometheus.client.CollectorRegistry
-import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.content
 import no.nav.helse.brreg.EnhetsregisterIndexedJson
 import no.nav.helse.brreg.EnhetsregisteretOffline
@@ -17,7 +16,7 @@ import kotlin.test.assertNull
 // ref: https://github.com/FasterXML/jackson-core/issues/603
 class EnhetsregisteretOfflineTest {
 
-    private lateinit var enhetsregisteret:EnhetsregisteretOffline
+    private lateinit var enhetsregisteret: EnhetsregisteretOffline
 
     @BeforeEach
     fun setupEach() {
@@ -30,20 +29,16 @@ class EnhetsregisteretOfflineTest {
 
     @Test
     fun `offline oppslag på underenhet skal fungere`() {
-        runBlocking {
-            val data = enhetsregisteret.hentUnderenhet(OrgNr("995298775"))
-            assertNotNull(data)
-            assertEquals("995298775", data["organisasjonsnummer"]!!.content)
-        }
+        val data = enhetsregisteret.hentUnderenhet(OrgNr("995298775"))
+        assertNotNull(data)
+        assertEquals("995298775", data["organisasjonsnummer"]!!.content)
     }
 
     @Test
     fun `offline oppslag på enhet skal fungere`() {
-        runBlocking {
-            val data = enhetsregisteret.hentEnhet(OrgNr("971524553"))
-            assertNotNull(data)
-            assertEquals("971524553", data["organisasjonsnummer"]!!.content)
-        }
+        val data = enhetsregisteret.hentEnhet(OrgNr("971524553"))
+        assertNotNull(data)
+        assertEquals("971524553", data["organisasjonsnummer"]!!.content)
     }
 
     @Test

@@ -6,20 +6,12 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.json.JsonObject
 import org.slf4j.LoggerFactory
-import java.io.*
+import java.io.File
+import java.io.IOException
+import java.io.RandomAccessFile
 import java.nio.charset.Charset
 import java.nio.file.Files
 import java.nio.file.Path
-
-fun main() {
-   /*val dataPath = "${System.getenv("HOME")}/Downloads/underenheter_alle.json"
-   val service = EnhetsregisterIndexedJson(dataPath)
-   println(service.lookupOrg(OrgNr("995298775")))*/
-
-    val dataPath = "${System.getenv("HOME")}/Downloads/enheter_alle.json"
-    val service = EnhetsregisterIndexedJson(dataPath)
-    println(service.lookupOrg(OrgNr("971524553")))
-}
 
 private val log = LoggerFactory.getLogger(EnhetsregisterIndexedJson::class.java)
 

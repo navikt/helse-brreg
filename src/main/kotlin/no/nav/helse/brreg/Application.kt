@@ -26,8 +26,6 @@ import java.lang.IllegalArgumentException
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
-private val log = LoggerFactory.getLogger("no.nav.helse.brreg.Application")
-
 private val collectorRegistry = CollectorRegistry.defaultRegistry
 internal val instrumentation = Instrumentation(collectorRegistry)
 
@@ -55,11 +53,9 @@ fun Application.brregModule(
         )
     }
 
-    if (enableDownloadScheduler) setupDownloadScheduler(enhetsregisteret)
+    if (enableDownloadScheduler) setupDownloadScheduler(enhetsregisteret, instrumentation.downloadAndIndexTimeObserver)
 
     routing {
-
-
         get("/enhetsregisteret/api/underenheter/{orgnr}") {
             val orgnr = try {
                 OrgNr(call.parameters["orgnr"]!!)
@@ -91,9 +87,6 @@ fun Application.brregModule(
             call.respondText(data.toString(),
                 ContentType("application", "json"))
         }
-
-
-
 
         get("/isalive") {
             call.respondText("ALIVE", ContentType.Text.Plain)
