@@ -33,10 +33,15 @@ class EnhetsregisterDownloader {
                 val filenameJson = "$dir/$prefix${UUID.randomUUID()}.json"
                 val filenameGZIP = "$filenameJson.gz"
                 log.info("laster ned fra $url")
-                val readableByteChannel: ReadableByteChannel = Channels.newChannel(url.openStream())
-                FileOutputStream(filenameGZIP).use {
-                    it.channel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE)
+
+                url.openStream().use { urlStream ->
+                    Channels.newChannel(urlStream).use {byteChannel ->
+                        FileOutputStream(filenameGZIP).use {
+                            it.channel.transferFrom(byteChannel, 0, Long.MAX_VALUE)
+                        }
+                    }
                 }
+
                 log.info("pakker ut $filenameGZIP")
                 ProcessBuilder()
                     .command("gunzip", filenameGZIP)
