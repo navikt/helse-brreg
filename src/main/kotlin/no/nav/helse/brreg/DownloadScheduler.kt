@@ -15,7 +15,7 @@ private fun Long.toDate() = Date.from(Instant.ofEpochMilli(this))
 
 internal fun setupDownloadScheduler(
     enhetsregisteretOffline: EnhetsregisteretOffline,
-    maxAgeSeconds:Long = 5* 60L
+    maxAgeSeconds:Long = 60L * 60 * 24
 ) {
     val maxAgeMillis = maxAgeSeconds * 1000L
     val lastUpdated = enhetsregisteretOffline.lastModified()
@@ -24,7 +24,7 @@ internal fun setupDownloadScheduler(
 
     val initialDelay = maxOf(0, (maxAgeMillis - (now - lastUpdated)))
 
-    log.info("setting up scheduler: initialDelaySecs=${initialDelay/1000}, periodSecs=${maxAgeMillis/1000}")
+    log.info("setting up downloadScheduler: firstRun=${(now + initialDelay).toDate()}, periodSeconds=${maxAgeMillis/1000}")
     val scheduler = Executors.newSingleThreadScheduledExecutor()
 
     scheduler.scheduleAtFixedRate({
