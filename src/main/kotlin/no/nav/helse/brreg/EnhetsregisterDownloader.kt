@@ -51,7 +51,7 @@ class EnhetsregisterDownloader {
                     .redirectOutput(ProcessBuilder.Redirect.INHERIT)
                     .start()
                     .waitFor()
-                log.info("laster og indekser $filenameJson")
+                log.info("laster og indekserer $filenameJson")
                 EnhetsregisterIndexedJson(filenameJson)
             } catch (ex:Throwable) {
                 log.error("Feil under nedlasting: ", ex)
