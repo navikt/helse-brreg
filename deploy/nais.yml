@@ -15,8 +15,12 @@ spec:
    readiness:
       path: /isready
    resources:
-     limits:
-       memory: 1024Mi
+      limits:
+         cpu: 1000m
+         memory: 2048Mi
+      requests:
+         cpu: 500m
+         memory: 512Mi
    webproxy: true
    prometheus:
       enabled: true

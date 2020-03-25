@@ -53,7 +53,7 @@ class EnhetsregisterDownloader {
                     .waitFor()
                 log.info("laster og indekser $filenameJson")
                 EnhetsregisterIndexedJson(filenameJson)
-            } catch (ex:Exception) {
+            } catch (ex:Throwable) {
                 log.error("Feil under nedlasting: ", ex)
                 throw ex
             }
