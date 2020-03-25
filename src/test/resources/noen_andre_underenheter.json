@@ -1,0 +1,316 @@
+[
+  {
+    "organisasjonsnummer": "974486725",
+    "navn": "KRANBILEN RAUMA-GUDFINNUR EINARSSON",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-13",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Kombinert husdyrhold og planteproduksjon",
+      "kode": "01.500"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974419807",
+    "oppstartsdato": "1995-04-27",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "6320",
+      "poststed": "ISFJORDEN",
+      "adresse": [
+        "Kavlivegen 23"
+      ],
+      "kommune": "RAUMA",
+      "kommunenummer": "1539"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974487500",
+    "navn": "INTERIØRMAKERN Bjørnar Grunnfoss",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-13",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Malerarbeid",
+      "kode": "43.341"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974419904",
+    "oppstartsdato": "1995-03-15",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8403",
+      "poststed": "SORTLAND",
+      "adresse": [
+        "Gunsteins vei 14"
+      ],
+      "kommune": "SORTLAND",
+      "kommunenummer": "1870"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974487942",
+    "navn": "GUNNARS MAL & SNEKKERSERVICE Pedersen",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-13",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Oppføring av bygninger",
+      "kode": "41.200"
+    },
+    "antallAnsatte": 1,
+    "overordnetEnhet": "874420352",
+    "oppstartsdato": "1995-02-15",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "7072",
+      "poststed": "HEIMDAL",
+      "adresse": [
+        "Jarveien 15B"
+      ],
+      "kommune": "TRONDHEIM",
+      "kommunenummer": "5001"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974491508",
+    "navn": "TORE ELLING VARTDAL",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-14",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Kombinert husdyrhold og planteproduksjon",
+      "kode": "01.500"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974391791",
+    "oppstartsdato": "1994-12-31",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "6170",
+      "poststed": "VARTDAL",
+      "adresse": [
+        "Ospholvegen 56"
+      ],
+      "kommune": "ØRSTA",
+      "kommunenummer": "1520"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974491664",
+    "navn": "KISS MARIT H. ENDRESEN",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "hjemmeside": "www.marit.endresen.marykaynorway.no",
+    "registreringsdatoEnhetsregisteret": "1995-06-14",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Frisering og annen skjønnhetspleie",
+      "kode": "96.020"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974422360",
+    "oppstartsdato": "1995-05-02",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0252",
+      "poststed": "OSLO",
+      "adresse": [
+        "Lille Stranden 8"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974491850",
+    "navn": "PIAS BALLETTSTUDIO",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8003",
+      "poststed": "BODØ",
+      "adresse": [
+        "Evald Erlandsens vei 10"
+      ],
+      "kommune": "BODØ",
+      "kommunenummer": "1804"
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-15",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Undervisning i kunstfag",
+      "kode": "85.522"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "982033268",
+    "oppstartsdato": "1995-03-01",
+    "datoEierskifte": "2000-07-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8014",
+      "poststed": "BODØ",
+      "adresse": [
+        "Skiviklia 46"
+      ],
+      "kommune": "BODØ",
+      "kommunenummer": "1804"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974492148",
+    "navn": "CATHARINA HORN AS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-15",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Andre kombinerte tjenester tilknyttet eiendomsdrift",
+      "kode": "81.109"
+    },
+    "antallAnsatte": 1,
+    "overordnetEnhet": "974421399",
+    "oppstartsdato": "1995-04-28",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0267",
+      "poststed": "OSLO",
+      "adresse": [
+        "v/ Vibecke Horn",
+        "Frogner terrasse 9"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974494469",
+    "navn": "HALSNE TORJUS",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-17",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Produksjon av fôrvarer til husdyrhold",
+      "kode": "10.910"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974423561",
+    "oppstartsdato": "1995-04-05",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "4134",
+      "poststed": "JØSENFJORDEN",
+      "adresse": [
+        "Ulladalen 507"
+      ],
+      "kommune": "SULDAL",
+      "kommunenummer": "1134"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974494523",
+    "navn": "OLA HENRIK BRUN",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-17",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Hav- og kystfiske",
+      "kode": "03.111"
+    },
+    "antallAnsatte": 10,
+    "overordnetEnhet": "974365596",
+    "oppstartsdato": "1995-05-02",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8430",
+      "poststed": "MYRE",
+      "adresse": [
+        "Klo"
+      ],
+      "kommune": "ØKSNES",
+      "kommunenummer": "1868"
+    },
+    "links": []
+  },
+  {
+    "organisasjonsnummer": "974496100",
+    "navn": "HERFINN LORENTZEN",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "registreringsdatoEnhetsregisteret": "1995-06-19",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Melkeproduksjon på storfe",
+      "kode": "01.410"
+    },
+    "antallAnsatte": 0,
+    "overordnetEnhet": "974363771",
+    "oppstartsdato": "1994-01-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "8725",
+      "poststed": "UTSKARPEN",
+      "adresse": [
+        "Nesnaveien 938"
+      ],
+      "kommune": "RANA",
+      "kommunenummer": "1833"
+    },
+    "links": []
+  }
+]
