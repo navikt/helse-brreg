@@ -2,6 +2,7 @@ package no.nav.helse.brreg
 
 import org.slf4j.LoggerFactory
 import java.io.FileOutputStream
+import java.lang.Exception
 import java.net.URL
 import java.nio.channels.Channels
 import java.nio.channels.ReadableByteChannel
@@ -28,29 +29,34 @@ class EnhetsregisterDownloader {
         private val dir = "."
 
         private fun createIndexedJsonFromUrl(url: URL, prefix:String) : EnhetsregisterIndexedJson{
-            val filenameJson = "$dir/$prefix${UUID.randomUUID()}.json"
-            val filenameGZIP = "$filenameJson.gz"
-            log.info("laster ned fra $url")
-            val readableByteChannel: ReadableByteChannel = Channels.newChannel(url.openStream())
-            FileOutputStream(filenameGZIP).use {
-                it.channel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE)
+            return try {
+                val filenameJson = "$dir/$prefix${UUID.randomUUID()}.json"
+                val filenameGZIP = "$filenameJson.gz"
+                log.info("laster ned fra $url")
+                val readableByteChannel: ReadableByteChannel = Channels.newChannel(url.openStream())
+                FileOutputStream(filenameGZIP).use {
+                    it.channel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE)
+                }
+                log.info("pakker ut $filenameGZIP")
+                ProcessBuilder()
+                    .command("gunzip", filenameGZIP)
+                    .redirectError(ProcessBuilder.Redirect.INHERIT)
+                    .redirectOutput(ProcessBuilder.Redirect.INHERIT)
+                    .start()
+                    .waitFor()
+                log.info("touching $filenameJson")
+                ProcessBuilder()
+                    .command("touch", filenameJson)
+                    .redirectError(ProcessBuilder.Redirect.INHERIT)
+                    .redirectOutput(ProcessBuilder.Redirect.INHERIT)
+                    .start()
+                    .waitFor()
+                log.info("laster og indekser $filenameJson")
+                EnhetsregisterIndexedJson(filenameJson)
+            } catch (ex:Exception) {
+                log.error("Feil under nedlasting: ", ex)
+                throw ex
             }
-            log.info("pakker ut $filenameGZIP")
-            ProcessBuilder()
-                .command("gunzip", filenameGZIP)
-                .redirectError(ProcessBuilder.Redirect.INHERIT)
-                .redirectOutput(ProcessBuilder.Redirect.INHERIT)
-                .start()
-                .waitFor()
-            log.info("touching $filenameJson")
-            ProcessBuilder()
-                .command("touch", filenameJson)
-                .redirectError(ProcessBuilder.Redirect.INHERIT)
-                .redirectOutput(ProcessBuilder.Redirect.INHERIT)
-                .start()
-                .waitFor()
-            log.info("laster og indekser $filenameJson")
-            return EnhetsregisterIndexedJson(filenameJson)
         }
     }
 }
