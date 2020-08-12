@@ -9,6 +9,10 @@ val logstashEncoderVersion = "6.3"
 val serializerVersion = "0.20.0"
 val jacksonVersion = "2.10.3"
 
+val snykImplementationDependencyOverrides = arrayOf(
+    // netty 4.1.46: Kan fjernes når ktor depender på ny netty-codec,
+    "io.netty:netty-codec-http2:4.1.46.Final"
+)
 group = "no.nav.helse"
 
 plugins {
@@ -25,6 +29,9 @@ repositories {
 }
 
 dependencies {
+   snykImplementationDependencyOverrides.forEach { dependencyNotation ->
+      implementation(dependencyNotation)
+   }
    implementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
    implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
    implementation("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
