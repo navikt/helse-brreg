@@ -5,9 +5,9 @@ val ktorVersion = "1.3.2"
 val micrometerVersion = "1.3.3"
 val slf4jVersion = "1.7.30"
 val logbackVersion = "1.2.3"
-val logstashEncoderVersion = "6.3"
+val logstashEncoderVersion = "6.4"
 val serializerVersion = "0.20.0"
-val jacksonVersion = "2.10.3"
+val jacksonVersion = "2.12.1"
 
 val snykImplementationDependencyOverrides = arrayOf(
     // netty 4.1.46: Kan fjernes når ktor depender på ny netty-codec,
