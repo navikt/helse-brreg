@@ -8,8 +8,8 @@ metadata:
 spec:
    image: {{ image }}
    replicas:
-      min: 1
-      max: 2
+      min: 2
+      max: 3
    liveness:
       path: /isalive
    readiness:
