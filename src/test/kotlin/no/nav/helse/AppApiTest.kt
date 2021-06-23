@@ -5,10 +5,7 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.http.isSuccess
 import io.ktor.server.testing.handleRequest
 import io.ktor.server.testing.withTestApplication
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
-import kotlinx.serialization.json.content
-import kotlinx.serialization.json.int
+import kotlinx.serialization.json.*
 import no.nav.helse.brreg.EnhetsregisterIndexedJson
 import no.nav.helse.brreg.EnhetsregisteretOffline
 import no.nav.helse.brreg.brregModule
@@ -20,7 +17,10 @@ import kotlin.test.assertNotNull
 
 class AppApiTest {
 
-    private val json = Json(JsonConfiguration.Stable)
+    private val json = Json {
+        encodeDefaults = true
+        ignoreUnknownKeys = true
+    }
     private val alleEnheter = EnhetsregisterIndexedJson("./src/test/resources/noen_enheter.json")
     private val alleUnderenheter = EnhetsregisterIndexedJson("./src/test/resources/noen_underenheter.json")
     private val enhetsregisteret = EnhetsregisteretOffline(
@@ -37,11 +37,11 @@ class AppApiTest {
         }) {
             handleRequest(HttpMethod.Get, "/enhetsregisteret/api/underenheter/995298775").apply {
                 assertTrue { response.status()?.isSuccess() ?: false }
-                val orginfo = json.parseJson(response.content!!).jsonObject
+                val orginfo = json.parseToJsonElement(response.content!!).jsonObject
                 assertNotNull(orginfo)
-                assertEquals(1005, orginfo["antallAnsatte"]!!.int)
-                assertEquals("2010-04-01", orginfo["oppstartsdato"]!!.content)
-                assertEquals("995298775", orginfo["organisasjonsnummer"]!!.content)
+                assertEquals(1005, orginfo["antallAnsatte"]!!.jsonPrimitive.int)
+                assertEquals("2010-04-01", orginfo["oppstartsdato"]!!.jsonPrimitive.content)
+                assertEquals("995298775", orginfo["organisasjonsnummer"]!!.jsonPrimitive.content)
             }
         }
     }
@@ -53,11 +53,41 @@ class AppApiTest {
         }) {
             handleRequest(HttpMethod.Get, "/enhetsregisteret/api/enheter/971524553").apply {
                 assertTrue { response.status()?.isSuccess() ?: false }
-                val orginfo = json.parseJson(response.content!!).jsonObject
+                val orginfo = json.parseToJsonElement(response.content!!).jsonObject
                 assertNotNull(orginfo)
-                assertEquals(0, orginfo["antallAnsatte"]!!.int)
+                assertEquals(0, orginfo["antallAnsatte"]!!.jsonPrimitive.int)
                 assertEquals(null, orginfo["oppstartsdato"])
-                assertEquals("971524553", orginfo["organisasjonsnummer"]!!.content)
+                assertEquals("971524553", orginfo["organisasjonsnummer"]!!.jsonPrimitive.content)
+            }
+        }
+    }
+
+    @Test
+    fun `hent underenheter med overordnet`() {
+        withTestApplication({
+            brregModule(enhetsregisteret, false)
+        }) {
+            handleRequest(HttpMethod.Get, "/enhetsregisteret/api/underenheter_for_overordnet/889640782").apply {
+                assertTrue { response.status()?.isSuccess() ?: false }
+                val orglist = json.parseToJsonElement(response.content!!).jsonArray
+                assertEquals(
+                    setOf("995298775", "995298776"),
+                    orglist.map { it.jsonPrimitive.content }.toSet())
+            }
+        }
+    }
+
+    @Test
+    fun `hent enheter med overordnet`() {
+        withTestApplication({
+            brregModule(enhetsregisteret, false)
+        }) {
+            handleRequest(HttpMethod.Get, "/enhetsregisteret/api/enheter_for_overordnet/991012206").apply {
+                assertTrue { response.status()?.isSuccess() ?: false }
+                val orglist = json.parseToJsonElement(response.content!!).jsonArray
+                assertEquals(
+                    setOf("971524553", "888777666"),
+                    orglist.map { it.jsonPrimitive.content }.toSet())
             }
         }
     }

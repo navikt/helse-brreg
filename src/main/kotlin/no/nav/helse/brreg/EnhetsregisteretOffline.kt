@@ -1,6 +1,9 @@
 package no.nav.helse.brreg
 
+import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.buildJsonArray
 
 class EnhetsregisteretOffline(
     private val instrumentation: Instrumentation,
@@ -15,6 +18,16 @@ class EnhetsregisteretOffline(
     fun hentUnderenhet(orgNr: OrgNr): JsonObject? = alleUnderenheter.lookupOrg(orgNr).apply {
         if (this != null) instrumentation.lookupUnderenhetSucceeded() else instrumentation.lookupUnderenhetFailed()
     }
+
+    fun hentEnheterHvorOverordnetEr(orgNr: OrgNr): JsonArray =
+        alleEnheter.lookupOrgnrMedOverordnetOrgnr(orgNr).let { list ->
+            buildJsonArray { list.forEach { add(JsonPrimitive(it)) }  }
+        }
+
+    fun hentUnderenheterHvorOverordnetEr(orgNr: OrgNr): JsonArray =
+        alleUnderenheter.lookupOrgnrMedOverordnetOrgnr(orgNr).let { list ->
+            buildJsonArray { list.forEach { add(JsonPrimitive(it)) }  }
+        }
 
     fun lastModified() = minOf(alleEnheter.lastModified, alleUnderenheter.lastModified)
 

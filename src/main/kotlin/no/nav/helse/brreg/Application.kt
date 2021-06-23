@@ -22,12 +22,15 @@ import io.micrometer.prometheus.PrometheusMeterRegistry
 import io.prometheus.client.*
 import io.prometheus.client.exporter.common.TextFormat
 import org.slf4j.*
+import java.io.StringWriter
 import java.lang.IllegalArgumentException
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
 private val collectorRegistry = CollectorRegistry.defaultRegistry
 internal val instrumentation = Instrumentation(collectorRegistry)
+
+private val log = LoggerFactory.getLogger("no.nav.helse.brreg.Application")
 
 fun Application.brregModule(
     enhetsregisteret: EnhetsregisteretOffline =
@@ -57,6 +60,7 @@ fun Application.brregModule(
 
     routing {
         get("/enhetsregisteret/api/underenheter/{orgnr}") {
+            log.info("get underenheter")
             val orgnr = try {
                 OrgNr(call.parameters["orgnr"]!!)
             } catch (ex: IllegalArgumentException) {
@@ -73,6 +77,7 @@ fun Application.brregModule(
         }
 
         get("/enhetsregisteret/api/enheter/{orgnr}") {
+            log.info("get enheter")
             val orgnr = try {
                 OrgNr(call.parameters["orgnr"]!!)
             } catch (ex: IllegalArgumentException) {
@@ -88,6 +93,32 @@ fun Application.brregModule(
                 ContentType("application", "json"))
         }
 
+        get("/enhetsregisteret/api/underenheter_for_overordnet/{overordnet_orgnr}") {
+            log.info("get underenheter_for_overordnet")
+            val orgnr = try {
+                OrgNr(call.parameters["overordnet_orgnr"]!!)
+            } catch (ex: IllegalArgumentException) {
+                call.respond(HttpStatusCode.BadRequest, "ugyldig orgnr")
+                return@get
+            }
+            val data = enhetsregisteret.hentUnderenheterHvorOverordnetEr(orgnr)
+            call.respondText(data.toString(),
+                ContentType("application", "json"))
+        }
+
+        get("/enhetsregisteret/api/enheter_for_overordnet/{overordnet_orgnr}") {
+            log.info("get enheter_for_overordnet")
+            val orgnr = try {
+                OrgNr(call.parameters["overordnet_orgnr"]!!)
+            } catch (ex: IllegalArgumentException) {
+                call.respond(HttpStatusCode.BadRequest, "ugyldig orgnr")
+                return@get
+            }
+            val data = enhetsregisteret.hentEnheterHvorOverordnetEr(orgnr)
+            call.respondText(data.toString(),
+                ContentType("application", "json"))
+        }
+
         get("/isalive") {
             call.respondText("ALIVE", ContentType.Text.Plain)
         }
@@ -96,9 +127,9 @@ fun Application.brregModule(
         }
         get("/metrics") {
             val names = call.request.queryParameters.getAll("name[]")?.toSet() ?: emptySet()
-            call.respondTextWriter(ContentType.parse(TextFormat.CONTENT_TYPE_004)) {
-                TextFormat.write004(this, collectorRegistry.filteredMetricFamilySamples(names))
-            }
+            val text = StringWriter()
+            TextFormat.write004(text, collectorRegistry.filteredMetricFamilySamples(names))
+            call.respondText(text = text.toString(), contentType = ContentType.parse(TextFormat.CONTENT_TYPE_004))
         }
     }
 }

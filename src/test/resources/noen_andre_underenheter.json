@@ -312,5 +312,47 @@
       "kommunenummer": "1833"
     },
     "links": []
+  },
+
+  {
+    "organisasjonsnummer": "995298776",
+    "navn": "ARBEIDS- OG VELFERDSDIREKTORATET II snrgt",
+    "organisasjonsform": {
+      "kode": "BEDR",
+      "beskrivelse": "Bedrift",
+      "links": []
+    },
+    "postadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0130",
+      "poststed": "OSLO",
+      "adresse": [
+        "Postboks 5 St Olavs plass"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "registreringsdatoEnhetsregisteret": "2010-03-16",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+      "beskrivelse": "Offentlig administrasjon tilknyttet helsestell, sosial virksomhet, undervisning, kirke, kultur og miljøvern",
+      "kode": "84.120"
+    },
+    "antallAnsatte": 1005,
+    "overordnetEnhet": "889640782",
+    "oppstartsdato": "2010-04-01",
+    "beliggenhetsadresse": {
+      "land": "Norge",
+      "landkode": "NO",
+      "postnummer": "0557",
+      "poststed": "OSLO",
+      "adresse": [
+        "Sannergata 2"
+      ],
+      "kommune": "OSLO",
+      "kommunenummer": "0301"
+    },
+    "links": []
   }
 ]
