@@ -24,7 +24,7 @@ internal fun setupDownloadScheduler(
     log.info("emedded json last updated ${lastUpdated.toDate()}")
     val now = System.currentTimeMillis()
 
-    val initialDelay = maxOf(0, (maxAgeMillis - (now - lastUpdated)))
+    val initialDelay = 0L //maxOf(0, (maxAgeMillis - (now - lastUpdated)))
 
     log.info("setting up downloadScheduler: firstRun=${(now + initialDelay).toDate()}, periodSeconds=${maxAgeMillis/1000}")
     val scheduler = Executors.newSingleThreadScheduledExecutor()
