@@ -8,7 +8,6 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.metrics.micrometer.MicrometerMetrics
 import io.ktor.response.respond
 import io.ktor.response.respondText
-import io.ktor.response.respondTextWriter
 import io.ktor.routing.get
 import io.ktor.routing.routing
 import io.micrometer.core.instrument.Clock
@@ -36,8 +35,8 @@ fun Application.brregModule(
     enhetsregisteret: EnhetsregisteretOffline =
         EnhetsregisteretOffline(
             instrumentation = instrumentation,
-            alleEnheter = EnhetsregisterIndexedJson(brregJsonAlleEnheter),
-            alleUnderenheter = EnhetsregisterIndexedJson(brregJsonAlleUnderenheter)
+            alleEnheter = EnhetsregisterIndexedJson(brregEmbeddedJsonAlleEnheter),
+            alleUnderenheter = EnhetsregisterIndexedJson(brregEmbeddedJsonAlleUnderenheter)
         ),
     enableDownloadScheduler: Boolean = true
 ) {

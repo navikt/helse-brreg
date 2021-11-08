@@ -16,12 +16,12 @@ class EnhetsregisterDownloader {
         private val alleEnheterUrl = URL("https://data.brreg.no/enhetsregisteret/api/enheter/lastned")
         private val alleUnderEnheterUrl = URL("https://data.brreg.no/enhetsregisteret/api/underenheter/lastned")
 
-        private val dir = brregDir // "/tmp/brreg"
+        private val dir = "/tmp/brreg"
 
         private fun createIndexedJsonFromUrl(url: URL, prefix:String) : EnhetsregisterIndexedJson{
             return try {
                 val filenameJson = "$dir/$prefix${UUID.randomUUID()}.json"
-                val filenameGZIP = "$dir/$filenameJson.gz"
+                val filenameGZIP = "$$filenameJson.gz"
                 log.info("laster ned fra $url")
 
                 url.openStream().use { urlStream ->

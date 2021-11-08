@@ -7,8 +7,8 @@ import kotlinx.serialization.json.buildJsonArray
 
 class EnhetsregisteretOffline(
     private val instrumentation: Instrumentation,
-    private var alleEnheter: EnhetsregisterIndexedJson = EnhetsregisterIndexedJson(brregJsonAlleEnheter),
-    private var alleUnderenheter: EnhetsregisterIndexedJson = EnhetsregisterIndexedJson(brregJsonAlleUnderenheter),
+    private var alleEnheter: EnhetsregisterIndexedJson = EnhetsregisterIndexedJson(brregEmbeddedJsonAlleEnheter),
+    private var alleUnderenheter: EnhetsregisterIndexedJson = EnhetsregisterIndexedJson(brregEmbeddedJsonAlleUnderenheter),
     private val slettUnderliggendeFilVedErstatt: Boolean = true
 ) {
     fun hentEnhet(orgNr: OrgNr): JsonObject? = alleEnheter.lookupOrg(orgNr).apply {

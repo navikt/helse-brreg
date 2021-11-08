@@ -1,9 +1,9 @@
 package no.nav.helse.brreg
 
-internal val brregDir = "/tmp/brreg"
+private val embeddedBrregDir = "./brreg"
 
-internal val brregJsonAlleUnderenheter = "$brregDir/underenheter_alle.json"
-internal val brregJsonAlleEnheter = "$brregDir/enheter_alle.json"
+internal val brregEmbeddedJsonAlleUnderenheter = "$embeddedBrregDir/underenheter_alle.json"
+internal val brregEmbeddedJsonAlleEnheter = "$embeddedBrregDir/enheter_alle.json"
 
 private fun systemEnv(name: String) = envOrProp(name) ?: error("Mangler env var '$name'")
 
