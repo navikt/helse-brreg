@@ -3,17 +3,18 @@ FROM navikt/java:12
 COPY build/libs/*.jar ./
 
 USER root
-RUN mkdir ./brreg
+RUN mkdir /brreg
 
-ADD https://data.brreg.no/enhetsregisteret/api/underenheter/lastned ./brreg/underenheter_alle.json.gz
-RUN gunzip ./brreg/underenheter_alle.json.gz
-RUN touch ./brreg/underenheter_alle.json
+ADD https://data.brreg.no/enhetsregisteret/api/underenheter/lastned /brreg/underenheter_alle.json.gz
+RUN gunzip /brreg/underenheter_alle.json.gz
+RUN touch /brreg/underenheter_alle.json
 
-ADD https://data.brreg.no/enhetsregisteret/api/enheter/lastned ./brreg/enheter_alle.json.gz
-RUN gunzip ./brreg/enheter_alle.json.gz
-RUN touch ./brreg/enheter_alle.json
+ADD https://data.brreg.no/enhetsregisteret/api/enheter/lastned /brreg/enheter_alle.json.gz
+RUN gunzip /brreg/enheter_alle.json.gz
+RUN touch /brreg/enheter_alle.json
 
-RUN chown -R apprunner ./brreg
+RUN chown -R 1069 /brreg
+RUN chmod 775 /brreg
 
 USER apprunner
 

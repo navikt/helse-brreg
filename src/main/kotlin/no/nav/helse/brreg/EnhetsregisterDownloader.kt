@@ -16,7 +16,7 @@ class EnhetsregisterDownloader {
         private val alleEnheterUrl = URL("https://data.brreg.no/enhetsregisteret/api/enheter/lastned")
         private val alleUnderEnheterUrl = URL("https://data.brreg.no/enhetsregisteret/api/underenheter/lastned")
 
-        private val dir = "/tmp/brreg"
+        private val dir = "/brreg"
 
         private fun createIndexedJsonFromUrl(url: URL, prefix:String) : EnhetsregisterIndexedJson{
             return try {
