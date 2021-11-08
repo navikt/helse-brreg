@@ -21,7 +21,7 @@ class EnhetsregisterDownloader {
         private fun createIndexedJsonFromUrl(url: URL, prefix:String) : EnhetsregisterIndexedJson{
             return try {
                 val filenameJson = "$dir/$prefix${UUID.randomUUID()}.json"
-                val filenameGZIP = "$$filenameJson.gz"
+                val filenameGZIP = "$filenameJson.gz"
                 log.info("laster ned fra $url")
 
                 url.openStream().use { urlStream ->
