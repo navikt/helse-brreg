@@ -16,16 +16,15 @@ val snykImplementationDependencyOverrides = arrayOf(
 group = "no.nav.helse"
 
 plugins {
-   val kotlinVersion = "1.4.21"
+   val kotlinVersion = "1.5.31"
    kotlin("jvm") version kotlinVersion
    kotlin("plugin.serialization") version kotlinVersion
    application
 }
 
 repositories {
-   jcenter()
    mavenCentral()
-   maven("http://packages.confluent.io/maven/")
+   maven("https://packages.confluent.io/maven/")
 }
 
 dependencies {
@@ -68,12 +67,12 @@ dependencies {
 }
 
 java {
-   sourceCompatibility = JavaVersion.VERSION_12
-   targetCompatibility = JavaVersion.VERSION_12
+   sourceCompatibility = JavaVersion.VERSION_11
+   targetCompatibility = JavaVersion.VERSION_11
 }
 
 tasks.withType<KotlinCompile> {
-   kotlinOptions.jvmTarget = "1.8"
+   kotlinOptions.jvmTarget = "11"
 }
 
 tasks.named<Jar>("jar") {
@@ -104,8 +103,4 @@ tasks.withType<Test> {
    testLogging {
       events("passed", "skipped", "failed")
    }
-}
-
-tasks.withType<Wrapper> {
-   gradleVersion = "6.1.1"
 }
