@@ -31,8 +31,9 @@ class EnhetsregisterIndexedJsonTest {
     @Test
     @Disabled // Bruk for å manuelt teste mot hele datasettet
     fun `test med alle`() {
-        val brregAlle = EnhetsregisterIndexedJson("/Users/g153965/Downloads/underenheter_alle.json")
-        val brregOverordnetAlle = EnhetsregisterIndexedJson("/Users/g153965/Downloads/enheter_alle.json")
+        val home = System.getenv("HOME")
+        val brregAlle = EnhetsregisterIndexedJson("$home/Downloads/underenheter_alle.json")
+        /*val brregOverordnetAlle = */EnhetsregisterIndexedJson("$home/Downloads/enheter_alle.json")
 
         val orginfo = brregAlle.lookupOrg(OrgNr("972321850"))
         assertNotNull(orginfo)

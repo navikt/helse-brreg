@@ -11,4 +11,4 @@ private fun systemEnvOrDefault(name: String, default: String) = envOrProp(name) 
 
 private fun envOrProp(name: String) = System.getenv(name) ?: System.getProperty(name.asEnvKeyToPropKey())
 
-private fun String.asEnvKeyToPropKey() = toLowerCase().replace('_', '.')
+private fun String.asEnvKeyToPropKey() = lowercase().replace('_', '.')

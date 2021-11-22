@@ -11,7 +11,6 @@ import no.nav.helse.brreg.instrumentation
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-@io.ktor.util.KtorExperimentalAPI
 class AppNaisTest {
 
    private val alleEnheter = EnhetsregisterIndexedJson("./src/test/resources/noen_enheter.json")

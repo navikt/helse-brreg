@@ -1,22 +1,18 @@
 import org.jetbrains.kotlin.gradle.tasks.*
 
-val junitJupiterVersion = "5.6.3"
-val ktorVersion = "1.4.3"
-val micrometerVersion = "1.3.16"
-val slf4jVersion = "1.7.30"
-val logbackVersion = "1.2.3"
-val logstashEncoderVersion = "6.5"
-val serializerVersion = "1.0.1"
-val jacksonVersion = "2.12.1"
+val junitJupiterVersion = "5.8.1"
+val ktorVersion = "1.6.5"
+val micrometerVersion = "1.3.20"
+val slf4jVersion = "1.7.32"
+val logbackVersion = "1.2.7"
+val logstashEncoderVersion = "7.0"
+val serializerVersion = "1.3.1"
+val jacksonVersion = "2.12.5"
 
-val snykImplementationDependencyOverrides = arrayOf(
-    // netty 4.1.46: Kan fjernes når ktor depender på ny netty-codec,
-    "io.netty:netty-codec-http2:4.1.46.Final"
-)
 group = "no.nav.helse"
 
 plugins {
-   val kotlinVersion = "1.5.31"
+   val kotlinVersion = "1.6.0"
    kotlin("jvm") version kotlinVersion
    kotlin("plugin.serialization") version kotlinVersion
    application
@@ -28,9 +24,6 @@ repositories {
 }
 
 dependencies {
-   snykImplementationDependencyOverrides.forEach { dependencyNotation ->
-      implementation(dependencyNotation)
-   }
    implementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
    implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
    implementation("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
@@ -51,6 +44,7 @@ dependencies {
    implementation("ch.qos.logback:logback-classic:$logbackVersion")
    implementation("net.logstash.logback:logstash-logback-encoder:$logstashEncoderVersion")
 
+   testImplementation("org.jetbrains.kotlin:kotlin-test:1.6.0")
    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion")
    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
@@ -61,18 +55,15 @@ dependencies {
    testImplementation("io.ktor:ktor-client-mock-jvm:$ktorVersion") {
       exclude(group = "junit")
    }
-
-   testImplementation("org.awaitility:awaitility:4.0.1")
-   testImplementation("org.bouncycastle:bcpkix-jdk15on:1.64")
 }
 
 java {
-   sourceCompatibility = JavaVersion.VERSION_11
-   targetCompatibility = JavaVersion.VERSION_11
+   sourceCompatibility = JavaVersion.VERSION_17
+   targetCompatibility = JavaVersion.VERSION_17
 }
 
 tasks.withType<KotlinCompile> {
-   kotlinOptions.jvmTarget = "11"
+   kotlinOptions.jvmTarget = "17"
 }
 
 tasks.named<Jar>("jar") {
@@ -95,7 +86,7 @@ tasks.named<Jar>("jar") {
 }
 
 application {
-   mainClassName = "no.nav.helse.brreg.ApplicationKt"
+   mainClass.set("no.nav.helse.brreg.ApplicationKt")
 }
 
 tasks.withType<Test> {
