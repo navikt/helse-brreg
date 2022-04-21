@@ -1,13 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.*
 
-val junitJupiterVersion = "5.8.1"
-val ktorVersion = "1.6.5"
+val junitJupiterVersion = "5.8.2"
+val ktorVersion = "1.6.8"
 val micrometerVersion = "1.3.20"
-val slf4jVersion = "1.7.32"
-val logbackVersion = "1.2.7"
-val logstashEncoderVersion = "7.0"
-val serializerVersion = "1.3.1"
-val jacksonVersion = "2.12.5"
+val slf4jVersion = "1.7.36"
+val logbackVersion = "1.2.11"
+val logstashEncoderVersion = "7.1.1"
+val serializerVersion = "1.3.2"
 
 group = "no.nav.helse"
 
@@ -24,9 +23,9 @@ repositories {
 }
 
 dependencies {
-   implementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
-   implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
-   implementation("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
+   implementation("com.fasterxml.jackson.core:jackson-core:2.13.2")
+   implementation("com.fasterxml.jackson.core:jackson-databind:2.13.2.2")
+   implementation("com.fasterxml.jackson.core:jackson-annotations:2.13.2")
 
    implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
