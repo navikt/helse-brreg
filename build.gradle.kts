@@ -1,17 +1,17 @@
-import org.jetbrains.kotlin.gradle.tasks.*
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val junitJupiterVersion = "5.8.2"
-val ktorVersion = "1.6.8"
+val ktorVersion = "2.0.3"
 val micrometerVersion = "1.3.20"
 val slf4jVersion = "1.7.36"
 val logbackVersion = "1.2.11"
 val logstashEncoderVersion = "7.1.1"
-val serializerVersion = "1.3.2"
+val serializerVersion = "1.3.3"
 
 group = "no.nav.helse"
 
 plugins {
-   val kotlinVersion = "1.6.0"
+   val kotlinVersion = "1.7.10"
    kotlin("jvm") version kotlinVersion
    kotlin("plugin.serialization") version kotlinVersion
    application
@@ -35,15 +35,16 @@ dependencies {
    implementation("io.ktor:ktor-server-netty:$ktorVersion")
    implementation("io.ktor:ktor-client-apache:$ktorVersion")
    implementation("io.ktor:ktor-client-json:$ktorVersion")
-   implementation("io.ktor:ktor-client-serialization-jvm:$ktorVersion")
-   implementation("io.ktor:ktor-metrics-micrometer:$ktorVersion")
+   implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+   implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+   implementation("io.ktor:ktor-server-metrics-micrometer:$ktorVersion")
    implementation("io.micrometer:micrometer-registry-prometheus:$micrometerVersion")
 
    implementation("org.slf4j:slf4j-api:$slf4jVersion")
    implementation("ch.qos.logback:logback-classic:$logbackVersion")
    implementation("net.logstash.logback:logstash-logback-encoder:$logstashEncoderVersion")
 
-   testImplementation("org.jetbrains.kotlin:kotlin-test:1.6.0")
+   testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.10")
    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion")
    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
