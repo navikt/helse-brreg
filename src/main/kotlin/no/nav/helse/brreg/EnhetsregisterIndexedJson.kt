@@ -35,6 +35,8 @@ class EnhetsregisterIndexedJson(
         }
     }
 
+    fun size() = index.size
+
     fun lookupOrg(orgNr: OrgNr): JsonObject? {
         val pos = index[orgNr.value] ?: return null
         RandomAccessFile(jsonfilnavn, "r").use { file ->

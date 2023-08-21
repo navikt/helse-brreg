@@ -4,6 +4,9 @@ import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.buildJsonArray
+import org.slf4j.LoggerFactory
+
+private val log = LoggerFactory.getLogger(EnhetsregisteretOffline::class.java)
 
 class EnhetsregisteretOffline(
     private val instrumentation: Instrumentation,
@@ -34,6 +37,7 @@ class EnhetsregisteretOffline(
     fun erstattAlleEnheter(nyAlleEnheter: EnhetsregisterIndexedJson) {
         val forrige = alleEnheter
         alleEnheter = nyAlleEnheter
+        log.info("Erstattet alle enheter. oldSize=${forrige.size()} newSize=${alleUnderenheter.size()}")
         if (slettUnderliggendeFilVedErstatt) forrige.deleteUnderlyingFile()
         instrumentation.erstattetEnheter()
     }
@@ -41,6 +45,7 @@ class EnhetsregisteretOffline(
     fun erstattAlleUnderenheter(nyAlleUnderenheter: EnhetsregisterIndexedJson) {
         val forrige = alleUnderenheter
         alleUnderenheter = nyAlleUnderenheter
+        log.info("Erstattet alle underenheter. oldSize=${forrige.size()} newSize=${alleUnderenheter.size()}")
         if (slettUnderliggendeFilVedErstatt) forrige.deleteUnderlyingFile()
         instrumentation.erstattetUnderenheter()
     }
