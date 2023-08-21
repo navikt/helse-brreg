@@ -37,7 +37,7 @@ class EnhetsregisteretOffline(
     fun erstattAlleEnheter(nyAlleEnheter: EnhetsregisterIndexedJson) {
         val forrige = alleEnheter
         alleEnheter = nyAlleEnheter
-        log.info("Erstattet alle enheter. oldSize=${forrige.size()} newSize=${alleUnderenheter.size()}")
+        log.info("Erstattet alle enheter. oldSize=${forrige.size()} newSize=${nyAlleEnheter.size()}")
         if (slettUnderliggendeFilVedErstatt) forrige.deleteUnderlyingFile()
         instrumentation.erstattetEnheter()
     }
@@ -45,7 +45,7 @@ class EnhetsregisteretOffline(
     fun erstattAlleUnderenheter(nyAlleUnderenheter: EnhetsregisterIndexedJson) {
         val forrige = alleUnderenheter
         alleUnderenheter = nyAlleUnderenheter
-        log.info("Erstattet alle underenheter. oldSize=${forrige.size()} newSize=${alleUnderenheter.size()}")
+        log.info("Erstattet alle underenheter. oldSize=${forrige.size()} newSize=${nyAlleUnderenheter.size()}")
         if (slettUnderliggendeFilVedErstatt) forrige.deleteUnderlyingFile()
         instrumentation.erstattetUnderenheter()
     }
