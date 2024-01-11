@@ -134,6 +134,10 @@ class EnhetsregisterIndexedJson(
                 }
             }
             log.info("$count enheter indeksert")
+            if (count == 0) {
+                log.error("$count enheter indeksert, noe er galt.")
+                throw RuntimeException("$count enheter indeksert, noe er galt.")
+            }
         }
         log.info("overordnetToUnderenheter.size=${overordnetToUnderenheter.size}")
         log.info("utenOverordnetCount=${utenOverordnetCount}")

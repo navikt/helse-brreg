@@ -6,6 +6,7 @@ import no.nav.helse.brreg.EnhetsregisterIndexedJson
 import no.nav.helse.brreg.OrgNr
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
@@ -26,6 +27,13 @@ class EnhetsregisterIndexedJsonTest {
             setOf("995298775", "995298776"),
             brreg.lookupOrgnrMedOverordnetOrgnr(OrgNr(overordnet)).toSet()
         )
+    }
+
+    @Test
+    fun `ingen enheter gir error`() {
+        assertThrows<java.lang.RuntimeException> {
+            EnhetsregisterIndexedJson("./src/test/resources/emptylist.json")
+        }
     }
 
     @Test
