@@ -20,7 +20,9 @@ RUN useradd --system --home-dir "/app/" --uid 1069 --gid apprunner apprunner
 RUN chown -R 1069 /brreg
 RUN chmod 775 /brreg
 
-ENV JAVA_OPTS="-Dlogback.configurationFile=logback.xml"
+ENV JAVA_OPTS="-XX:MaxRAMPercentage=75 \
+                -Dlogback.configurationFile=logback.xml"
+
 ENV TZ="Europe/Oslo"
 EXPOSE 8080
 USER apprunner
