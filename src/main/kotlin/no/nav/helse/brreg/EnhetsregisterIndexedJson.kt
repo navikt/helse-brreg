@@ -76,6 +76,7 @@ class EnhetsregisterIndexedJson(
     )
 
     private fun createIndex(): Indexes {
+        memoryStats()
         val jfactory = JsonFactory()
         val orgnrToPosition = mutableMapOf<String, Pair<Long, Long>>()
         val overordnetToUnderenheter = mutableMapOf<String, MutableList<String>>()
@@ -111,8 +112,10 @@ class EnhetsregisterIndexedJson(
                                 orgnr,
                                 objectPos to (parser.currentLocation.byteOffset - objectPos)
                             )
-                            if (count.rem(100000) == 0)
+                            if (count.rem(100000) == 0) {
                                 log.info("$count enheter indeksert")
+                                memoryStats()
+                            }
                         }
                     }
                     JsonToken.FIELD_NAME -> if (1 == obj) {
@@ -154,4 +157,14 @@ class EnhetsregisterIndexedJson(
         }
         return Indexes(orgnrToPosition, overordnetToUnderenheter)
     }
+}
+
+private fun memoryStats() {
+    val mb = 1024 * 1024
+    val instance = Runtime.getRuntime()
+    log.info("Total Memory: " + instance.totalMemory() / mb + ", Free Memory: " + instance.freeMemory() / mb +
+            ", Used Memory: "
+            + (instance.totalMemory() - instance.freeMemory()) / mb +
+            ", Max Memory: " + instance.maxMemory() / mb)
+
 }
