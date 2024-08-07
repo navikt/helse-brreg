@@ -1,6 +1,7 @@
-FROM navikt/java:17
+FROM eclipse-temurin:17
 
-COPY build/libs/*.jar ./
+WORKDIR /app
+COPY build/libs/*.jar /app/
 
 USER root
 RUN mkdir /brreg
@@ -13,12 +14,14 @@ ADD https://data.brreg.no/enhetsregisteret/api/enheter/lastned /brreg/enheter_al
 RUN gunzip /brreg/enheter_alle.json.gz
 RUN touch /brreg/enheter_alle.json
 
+RUN groupadd --system --gid 1069 apprunner
+RUN useradd --system --home-dir "/app/" --uid 1069 --gid apprunner apprunner
+
 RUN chown -R 1069 /brreg
 RUN chmod 775 /brreg
 
+ENV JAVA_OPTS="-Dlogback.configurationFile=logback.xml"
+ENV TZ="Europe/Oslo"
+EXPOSE 8080
 USER apprunner
-
-ENV JAVA_OPTS="-XX:MaxRAMPercentage=75 \
-               -XX:+HeapDumpOnOutOfMemoryError \
-               -XX:HeapDumpPath=/oom-dump.hprof"
-RUN echo 'java -XX:MaxRAMPercentage=75 -XX:+PrintFlagsFinal -version | grep -Ei "maxheapsize|maxram"' > /init-scripts/0-dump-memory-config.sh
+CMD ["java", "-jar", "/app/app.jar"]
