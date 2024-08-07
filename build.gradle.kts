@@ -23,7 +23,17 @@ repositories {
    maven("https://packages.confluent.io/maven/")
 }
 
+val nettyHandlerOverriddenVersion = "4.1.108.Final" // TODO: Fjern når ktor oppgraderes fra 2.1.3 ?
+
 dependencies {
+
+   implementation("io.netty:netty-handler:$nettyHandlerOverriddenVersion").also {
+      if (ktorVersion != "2.1.3") throw RuntimeException("Slett nettyHandlerOverriddenVersion siden KTOR oppgradert?")
+   }
+   implementation("io.netty:netty-codec-http2:$nettyHandlerOverriddenVersion").also {
+      if (ktorVersion != "2.1.3") throw RuntimeException("Slett nettyHandlerOverriddenVersion siden KTOR oppgradert?")
+   }
+
    implementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
    implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
    implementation("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
