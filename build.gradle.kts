@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val junitJupiterVersion = "5.8.2"
-val ktorVersion = "2.1.3"
+val ktorVersion = "2.3.13"
 val micrometerVersion = "1.3.20"
 val slf4jVersion = "1.7.36"
-val logbackVersion = "1.3.12"
+val logbackVersion = "1.3.15"
 val logstashEncoderVersion = "7.4"
 val serializerVersion = "1.3.3"
 val jacksonVersion = "2.15.2"
@@ -23,15 +23,15 @@ repositories {
    maven("https://packages.confluent.io/maven/")
 }
 
-val nettyHandlerOverriddenVersion = "4.1.108.Final" // TODO: Fjern når ktor oppgraderes fra 2.1.3 ?
+val nettyHandlerOverriddenVersion = "4.1.118.Final" // TODO: Fjern når ktor oppgraderes fra 2.1.3 ?
 
 dependencies {
 
    implementation("io.netty:netty-handler:$nettyHandlerOverriddenVersion").also {
-      if (ktorVersion != "2.1.3") throw RuntimeException("Slett nettyHandlerOverriddenVersion siden KTOR oppgradert?")
+      if (ktorVersion != "2.3.13") throw RuntimeException("Slett nettyHandlerOverriddenVersion siden KTOR oppgradert?")
    }
    implementation("io.netty:netty-codec-http2:$nettyHandlerOverriddenVersion").also {
-      if (ktorVersion != "2.1.3") throw RuntimeException("Slett nettyHandlerOverriddenVersion siden KTOR oppgradert?")
+      if (ktorVersion != "2.3.13") throw RuntimeException("Slett nettyHandlerOverriddenVersion siden KTOR oppgradert?")
    }
 
    implementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
