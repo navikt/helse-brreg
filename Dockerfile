@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17
+FROM eclipse-temurin:17-ubi9-minimal
 
 WORKDIR /app
 COPY build/libs/*.jar /app/
