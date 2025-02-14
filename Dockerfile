@@ -4,6 +4,9 @@ WORKDIR /app
 COPY build/libs/*.jar /app/
 
 USER root
+
+RUN echo y|apt-get remove wget
+
 RUN mkdir /brreg
 
 ADD https://data.brreg.no/enhetsregisteret/api/underenheter/lastned /brreg/underenheter_alle.json.gz
