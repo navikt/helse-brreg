@@ -1,11 +1,7 @@
-FROM eclipse-temurin:17
+FROM eclipse-temurin:17 as builder
 
 WORKDIR /app
 COPY build/libs/*.jar /app/
-
-USER root
-
-RUN echo y|apt-get remove wget
 
 RUN mkdir /brreg
 
@@ -17,13 +13,9 @@ ADD https://data.brreg.no/enhetsregisteret/api/enheter/lastned /brreg/enheter_al
 RUN gunzip /brreg/enheter_alle.json.gz
 RUN touch /brreg/enheter_alle.json
 
-RUN groupadd --system --gid 1069 apprunner
-RUN useradd --system --home-dir "/app/" --uid 1069 --gid apprunner apprunner
-
-RUN chown -R 1069 /brreg
-RUN chmod 775 /brreg
-
+FROM gcr.io/distroless/java17-debian12
+COPY --from=builder /brreg/ /brreg/
+COPY --from=builder /app/app.jar /app/app.jar
 ENV TZ="Europe/Oslo"
 EXPOSE 8080
-USER apprunner
 CMD ["java", "-jar", "/app/app.jar", "-XX:MaxRAMPercentage=75", "-Dlogback.configurationFile=logback.xml"]
