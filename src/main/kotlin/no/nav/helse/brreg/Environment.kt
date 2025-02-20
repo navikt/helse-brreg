@@ -1,6 +1,6 @@
 package no.nav.helse.brreg
 
-private val embeddedBrregDir = "/brreg"
+internal val embeddedBrregDir = "/brreg"
 
 internal val brregEmbeddedJsonAlleUnderenheter = "$embeddedBrregDir/underenheter_alle.json"
 internal val brregEmbeddedJsonAlleEnheter = "$embeddedBrregDir/enheter_alle.json"

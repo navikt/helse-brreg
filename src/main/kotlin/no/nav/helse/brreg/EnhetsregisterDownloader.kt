@@ -1,12 +1,29 @@
 package no.nav.helse.brreg
 
 import org.slf4j.LoggerFactory
+import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.net.URL
 import java.nio.channels.Channels
+import java.nio.file.Files
+import java.nio.file.Path
 import java.util.*
+import java.util.zip.GZIPInputStream
 
 private val log = LoggerFactory.getLogger(EnhetsregisterDownloader::class.java)
+
+internal fun decompressGzipFile(gzipFile: String, newFile: String) {
+    val bufferSize = 64 * 1024
+    GZIPInputStream(FileInputStream(gzipFile), bufferSize).use { gis ->
+        FileOutputStream(newFile).use { fos ->
+            val buffer = ByteArray(bufferSize)
+            var len: Int
+            while ((gis.read(buffer).also { len = it }) != -1) {
+                fos.write(buffer, 0, len)
+            }
+        }
+    }
+}
 
 class EnhetsregisterDownloader {
     companion object {
@@ -16,7 +33,7 @@ class EnhetsregisterDownloader {
         private val alleEnheterUrl = URL("https://data.brreg.no/enhetsregisteret/api/enheter/lastned")
         private val alleUnderEnheterUrl = URL("https://data.brreg.no/enhetsregisteret/api/underenheter/lastned")
 
-        private val dir = "/brreg"
+        private val dir = embeddedBrregDir
 
         private fun createIndexedJsonFromUrl(url: URL, prefix:String) : EnhetsregisterIndexedJson{
             return try {
@@ -32,20 +49,10 @@ class EnhetsregisterDownloader {
                     }
                 }
 
-                log.info("pakker ut $filenameGZIP")
-                ProcessBuilder()
-                    .command("gunzip", filenameGZIP)
-                    .redirectError(ProcessBuilder.Redirect.INHERIT)
-                    .redirectOutput(ProcessBuilder.Redirect.INHERIT)
-                    .start()
-                    .waitFor()
-                log.info("touching $filenameJson")
-                ProcessBuilder()
-                    .command("touch", filenameJson)
-                    .redirectError(ProcessBuilder.Redirect.INHERIT)
-                    .redirectOutput(ProcessBuilder.Redirect.INHERIT)
-                    .start()
-                    .waitFor()
+                log.info("pakker ut $filenameGZIP til $filenameJson")
+                decompressGzipFile(filenameGZIP, filenameJson)
+                log.info("sletter $filenameGZIP")
+                Files.delete(Path.of(filenameGZIP))
                 log.info("laster og indekserer $filenameJson")
                 EnhetsregisterIndexedJson(filenameJson)
             } catch (ex:Throwable) {
