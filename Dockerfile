@@ -15,7 +15,8 @@ RUN touch /brreg/enheter_alle.json
 
 FROM gcr.io/distroless/java17-debian12
 COPY --from=builder /brreg/ /brreg/
-COPY --from=builder /app/app.jar /app/app.jar
+COPY --from=builder /app/ /app/
 ENV TZ="Europe/Oslo"
 EXPOSE 8080
-CMD ["java", "-jar", "/app/app.jar", "-XX:MaxRAMPercentage=75", "-Dlogback.configurationFile=logback.xml"]
+WORKDIR /app
+CMD ["app.jar", "-XX:MaxRAMPercentage=75", "-Dlogback.configurationFile=logback.xml"]
