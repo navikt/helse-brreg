@@ -53,3 +53,5 @@ nb-configuration.xml
 # Misc
 *.swp
 
+/brreg/
+/brreg_test/
