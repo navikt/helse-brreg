@@ -15,7 +15,7 @@ ADD https://data.brreg.no/enhetsregisteret/api/enheter/lastned /brreg/enheter_al
 RUN gunzip /brreg/enheter_alle.json.gz
 RUN touch /brreg/enheter_alle.json
 
-FROM gcr.io/distroless/java17-debian12
+FROM gcr.io/distroless/java21-debian12
 COPY --from=builder --chown=1069:1069 /brreg/ /brreg/
 COPY --from=builder /app/ /app/
 ENV TZ="Europe/Oslo"
