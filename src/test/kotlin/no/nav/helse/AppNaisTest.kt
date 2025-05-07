@@ -1,9 +1,8 @@
 package no.nav.helse
 
-import io.ktor.http.HttpMethod
-import io.ktor.http.isSuccess
-import io.ktor.server.testing.handleRequest
-import io.ktor.server.testing.withTestApplication
+import io.ktor.client.request.*
+import io.ktor.http.*
+import io.ktor.server.testing.*
 import no.nav.helse.brreg.EnhetsregisterIndexedJson
 import no.nav.helse.brreg.EnhetsregisteretOffline
 import no.nav.helse.brreg.brregModule
@@ -21,40 +20,42 @@ class AppNaisTest {
        alleUnderenheter = alleUnderenheter,
        slettUnderliggendeFilVedErstatt = false
    )
+
    @Test
    fun `reports isalive status for nais`() {
-      withTestApplication({
-         brregModule(enhetsregisteret, false)
-      }) {
-         handleRequest(HttpMethod.Get, "/isalive").apply {
-            assertTrue { response.status()?.isSuccess() ?: false }
+      testApplication {
+         application {
+            brregModule(enhetsregisteret, false)
+         }
+         client.get("/isalive").apply {
+            assertTrue { status.isSuccess() }
          }
       }
-
    }
+
 
    @Test
    fun `reports isready status for nais`() {
-      withTestApplication({
-         brregModule(enhetsregisteret, false)
-      }) {
-         handleRequest(HttpMethod.Get, "/isready").apply {
-            assertTrue { response.status()?.isSuccess() ?: false }
+      testApplication {
+         application {
+            brregModule(enhetsregisteret, false)
+         }
+         client.get("/isready").apply {
+            assertTrue { status.isSuccess() }
          }
       }
-
    }
 
    @Test
    fun `reports metrics`() {
-      withTestApplication({
-         brregModule(enhetsregisteret, false)
-      }) {
-         handleRequest(HttpMethod.Get, "/metrics").apply {
-            assertTrue { response.status()?.isSuccess() ?: false }
+      testApplication {
+         application {
+            brregModule(enhetsregisteret, false)
+         }
+         client.get("/metrics").apply {
+            assertTrue { status.isSuccess() }
          }
       }
-
    }
 
 }

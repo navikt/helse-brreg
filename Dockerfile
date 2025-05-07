@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17 as builder
+FROM eclipse-temurin:21 as builder
 
 WORKDIR /app
 COPY build/libs/*.jar /app/
