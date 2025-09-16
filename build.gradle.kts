@@ -21,6 +21,8 @@ repositories {
    maven("https://packages.confluent.io/maven/")
 }
 
+val nettyHandlerOverriddenVersion = "4.1.125.Final"
+
 dependencies {
 
    implementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
@@ -31,6 +33,10 @@ dependencies {
    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializerVersion")
    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializerVersion")
+
+   implementation("io.netty:netty-codec-http2:$nettyHandlerOverriddenVersion").also {
+      if (ktorVersion != "3.1.2") throw RuntimeException("Slett nettyHandlerOverriddenVersion siden KTOR oppgradert?")
+   }
 
    implementation("io.ktor:ktor-server-netty:$ktorVersion")
    implementation("io.ktor:ktor-client-apache:$ktorVersion")
