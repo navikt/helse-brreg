@@ -21,7 +21,7 @@ repositories {
    maven("https://packages.confluent.io/maven/")
 }
 
-val nettyHandlerOverriddenVersion = "4.1.125.Final"
+val nettyHandlerOverriddenVersion = "4.1.130.Final"
 
 dependencies {
 
