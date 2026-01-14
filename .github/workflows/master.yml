@@ -66,3 +66,37 @@ jobs:
                CLUSTER: prod-fss
                RESOURCE: deploy/nais.yml
                VARS: deploy/prod.yml
+
+   deploy_to_dev_gcp:
+      name: Deploy to devGCP
+      needs: build
+      if: github.ref == 'refs/heads/master'
+      runs-on: ubuntu-latest
+      permissions:
+         id-token: write
+         contents: read
+      steps:
+         -  uses: actions/checkout@v3
+         -  uses: nais/deploy/actions/deploy@v2
+            env:
+               IMAGE: ${{ needs.build.outputs.IMAGE }}
+               CLUSTER: dev-gcp
+               RESOURCE: deploy/nais-gcp.yml
+               VARS: deploy/dev.yml
+
+   deploy_to_prod_gcp:
+      name: Deploy to prodGCP
+      needs: build
+      if: github.ref == 'refs/heads/master'
+      runs-on: ubuntu-latest
+      permissions:
+         id-token: write
+         contents: read
+      steps:
+         -  uses: actions/checkout@v3
+         -  uses: nais/deploy/actions/deploy@v2
+            env:
+               IMAGE: ${{ needs.build.outputs.IMAGE }}
+               CLUSTER: prod-gcp
+               RESOURCE: deploy/nais-gcp.yml
+               VARS: deploy/prod.yml
