@@ -1,1 +1,5 @@
-"cluster": "prod"
+replicas_min: 2
+replicas_max: 3
+cpu_req: 200m
+memory_req: 1664Mi
+memory_lim: 2048Mi

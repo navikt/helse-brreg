@@ -33,40 +33,6 @@ jobs:
       outputs:
          IMAGE: ${{ steps.docker-push.outputs.image }}
 
-#   deploy_to_dev:
-#      name: Deploy to dev
-#      needs: build
-#      if: github.ref == 'refs/heads/master'
-#      runs-on: ubuntu-latest
-#      permissions:
-#         id-token: write
-#         contents: read
-#      steps:
-#         -  uses: actions/checkout@v3
-#         -  uses: nais/deploy/actions/deploy@v2
-#            env:
-#               IMAGE: ${{ needs.build.outputs.IMAGE }}
-#               CLUSTER: dev-fss
-#               RESOURCE: deploy/nais.yml
-#               VARS: deploy/dev.yml
-#
-#   deploy_to_prod:
-#      name: Deploy to prod
-#      needs: build
-#      if: github.ref == 'refs/heads/master'
-#      runs-on: ubuntu-latest
-#      permissions:
-#         id-token: write
-#         contents: read
-#      steps:
-#         -  uses: actions/checkout@v3
-#         -  uses: nais/deploy/actions/deploy@v2
-#            env:
-#               IMAGE: ${{ needs.build.outputs.IMAGE }}
-#               CLUSTER: prod-fss
-#               RESOURCE: deploy/nais.yml
-#               VARS: deploy/prod.yml
-
    deploy_to_dev_gcp:
       name: Deploy to devGCP
       needs: build
@@ -82,6 +48,7 @@ jobs:
                IMAGE: ${{ needs.build.outputs.IMAGE }}
                CLUSTER: dev-gcp
                RESOURCE: deploy/nais-gcp.yml
+               VARS: deploy/dev.yml
 
    deploy_to_prod_gcp:
       name: Deploy to prodGCP
@@ -98,3 +65,4 @@ jobs:
                IMAGE: ${{ needs.build.outputs.IMAGE }}
                CLUSTER: prod-gcp
                RESOURCE: deploy/nais-gcp.yml
+               VARS: deploy/prod.yml

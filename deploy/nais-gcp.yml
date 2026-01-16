@@ -10,18 +10,18 @@ metadata:
 spec:
   image: {{ image }}
   replicas:
-    min: 2
-    max: 3
+    min: {{replicas_min}}
+    max: {{replicas_max}}
   liveness:
     path: /isalive
   readiness:
     path: /isready
   resources:
     limits:
-      memory: 2048Mi
+      memory: {{memory_lim}}
     requests:
-      cpu: 180m
-      memory: 1664Mi
+      cpu: {{cpu_req}}
+      memory: {{memory_req}}
   accessPolicy:
     outbound:
       external:
