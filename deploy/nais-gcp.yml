@@ -18,11 +18,10 @@ spec:
     path: /isready
   resources:
     limits:
-      cpu: 1000m
       memory: 2048Mi
     requests:
-      cpu: 500m
-      memory: 1024Mi
+      cpu: 180m
+      memory: 1664Mi
   accessPolicy:
     outbound:
       external:
