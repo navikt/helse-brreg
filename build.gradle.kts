@@ -1,16 +1,16 @@
 val junitJupiterVersion = "5.12.2"
-val ktorVersion = "3.1.2"
+val ktorVersion = "3.4.1"
 val micrometerVersion = "1.3.20"
 val slf4jVersion = "1.7.36"
-val logbackVersion = "1.3.16"
+val logbackVersion = "1.5.32"
 val logstashEncoderVersion = "7.4"
 val serializerVersion = "1.8.1"
-val jacksonVersion = "2.15.2"
+val jacksonVersion = "2.18.6"
 
 group = "no.nav.helse"
 
 plugins {
-   val kotlinVersion = "2.1.20"
+   val kotlinVersion = "2.3.20"
    kotlin("jvm") version kotlinVersion
    kotlin("plugin.serialization") version kotlinVersion
    application
@@ -20,8 +20,6 @@ repositories {
    mavenCentral()
    maven("https://packages.confluent.io/maven/")
 }
-
-val nettyHandlerOverriddenVersion = "4.1.130.Final"
 
 dependencies {
 
@@ -33,10 +31,6 @@ dependencies {
    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializerVersion")
    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializerVersion")
-
-   implementation("io.netty:netty-codec-http2:$nettyHandlerOverriddenVersion").also {
-      if (ktorVersion != "3.1.2") throw RuntimeException("Slett nettyHandlerOverriddenVersion siden KTOR oppgradert?")
-   }
 
    implementation("io.ktor:ktor-server-netty:$ktorVersion")
    implementation("io.ktor:ktor-client-apache:$ktorVersion")
