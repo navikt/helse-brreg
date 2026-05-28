@@ -1,5 +1,5 @@
 val junitJupiterVersion = "5.12.2"
-val ktorVersion = "3.4.1"
+val ktorVersion = "3.4.3"
 val micrometerVersion = "1.3.20"
 val slf4jVersion = "1.7.36"
 val logbackVersion = "1.5.32"
@@ -21,6 +21,8 @@ repositories {
    maven("https://packages.confluent.io/maven/")
 }
 
+val nettyHandlerOverriddenVersion = "4.2.13.Final"
+
 dependencies {
 
    implementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
@@ -32,12 +34,17 @@ dependencies {
    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializerVersion")
    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializerVersion")
 
-   implementation("io.ktor:ktor-server-netty:$ktorVersion")
-   implementation("io.ktor:ktor-client-apache:$ktorVersion")
-   implementation("io.ktor:ktor-client-json:$ktorVersion")
-   implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-   implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
-   implementation("io.ktor:ktor-server-metrics-micrometer:$ktorVersion")
+   implementation(platform("io.netty:netty-bom:$nettyHandlerOverriddenVersion")).also {
+      if (ktorVersion != "3.4.3") throw RuntimeException("Slett nettyHandlerOverriddenVersion siden KTOR oppgradert?")
+   }
+
+   implementation(platform("io.ktor:ktor-bom:$ktorVersion"))
+   implementation("io.ktor:ktor-server-netty")
+   implementation("io.ktor:ktor-client-apache")
+   implementation("io.ktor:ktor-client-json")
+   implementation("io.ktor:ktor-serialization-kotlinx-json")
+   implementation("io.ktor:ktor-client-content-negotiation")
+   implementation("io.ktor:ktor-server-metrics-micrometer")
    implementation("io.micrometer:micrometer-registry-prometheus:$micrometerVersion")
 
    implementation("org.slf4j:slf4j-api:$slf4jVersion")
@@ -51,10 +58,10 @@ dependencies {
    testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-   testImplementation("io.ktor:ktor-server-test-host:$ktorVersion") {
+   testImplementation("io.ktor:ktor-server-test-host") {
       exclude(group = "junit")
    }
-   testImplementation("io.ktor:ktor-client-mock-jvm:$ktorVersion") {
+   testImplementation("io.ktor:ktor-client-mock-jvm") {
       exclude(group = "junit")
    }
 }
