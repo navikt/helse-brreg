@@ -15,10 +15,10 @@ ADD https://data.brreg.no/enhetsregisteret/api/enheter/lastned /brreg/enheter_al
 RUN gunzip /brreg/enheter_alle.json.gz
 RUN touch /brreg/enheter_alle.json
 
-FROM gcr.io/distroless/java21-debian13
+FROM europe-north1-docker.pkg.dev/cgr-nav/pull-through/nav.no/jre:openjdk-21
 COPY --from=builder --chown=1069:1069 /brreg/ /brreg/
 COPY --from=builder /app/ /app/
 ENV TZ="Europe/Oslo"
 EXPOSE 8080
 WORKDIR /app
-CMD ["app.jar", "-XX:MaxRAMPercentage=75", "-Dlogback.configurationFile=logback.xml"]
+CMD ["-jar", "app.jar", "-XX:MaxRAMPercentage=75", "-Dlogback.configurationFile=logback.xml"]
