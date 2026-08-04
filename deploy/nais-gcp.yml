@@ -14,8 +14,12 @@ spec:
     max: {{replicas_max}}
   liveness:
     path: /isalive
+    failureThreshold: 60
+    periodSeconds: 5
   readiness:
     path: /isready
+    failureThreshold: 60
+    periodSeconds: 5
   resources:
     limits:
       memory: {{memory_lim}}
