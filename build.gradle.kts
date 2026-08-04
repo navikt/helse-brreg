@@ -2,10 +2,10 @@ val junitJupiterVersion = "5.12.2"
 val ktorVersion = "3.4.3"
 val micrometerVersion = "1.3.20"
 val slf4jVersion = "1.7.36"
-val logbackVersion = "1.5.32"
+val logbackVersion = "1.5.34"
 val logstashEncoderVersion = "7.4"
 val serializerVersion = "1.8.1"
-val jacksonVersion = "2.18.8"
+val jacksonVersion = "2.18.9"
 
 group = "no.nav.helse"
 
@@ -21,7 +21,7 @@ repositories {
    maven("https://packages.confluent.io/maven/")
 }
 
-val nettyHandlerOverriddenVersion = "4.2.15.Final"
+val nettyHandlerOverriddenVersion = "4.2.16.Final"
 
 dependencies {
 
