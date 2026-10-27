@@ -5,7 +5,7 @@ val slf4jVersion = "1.7.36"
 val logbackVersion = "1.5.34"
 val logstashEncoderVersion = "7.4"
 val serializerVersion = "1.8.1"
-val jacksonVersion = "2.18.9"
+val jacksonVersion = "2.18.11"
 
 group = "no.nav.helse"
 
@@ -21,7 +21,7 @@ repositories {
    maven("https://packages.confluent.io/maven/")
 }
 
-val nettyHandlerOverriddenVersion = "4.2.16.Final"
+val nettyHandlerOverriddenVersion = "4.2.17.Final"
 
 dependencies {
 
