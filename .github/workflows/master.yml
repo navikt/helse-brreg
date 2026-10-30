@@ -1,6 +1,7 @@
 name: Bygg og deploy ved push til master
 
 on:
+   workflow_dispatch:
    push:
       branches:
          - master
