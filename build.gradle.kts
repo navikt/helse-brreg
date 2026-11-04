@@ -1,11 +1,11 @@
 val junitJupiterVersion = "6.1.3"
 val ktorVersion = "3.6.0"
-val micrometerVersion = "1.17.2"
+val prometheusSimpleclientVersion = "0.16.0"
 val slf4jVersion = "2.0.20"
 val logbackVersion = "1.6.5"
 val logstashEncoderVersion = "9.0"
 val serializerVersion = "1.12.0"
-val jacksonVersion = "2.22"
+val jacksonVersion = "2.22.4"
 
 group = "no.nav.helse"
 
@@ -23,9 +23,10 @@ repositories {
 
 dependencies {
 
-   implementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
-   implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
-   implementation("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
+   implementation(platform("com.fasterxml.jackson:jackson-bom:$jacksonVersion"))
+   implementation("com.fasterxml.jackson.core:jackson-core")
+   implementation("com.fasterxml.jackson.core:jackson-databind")
+   implementation("com.fasterxml.jackson.core:jackson-annotations")
 
    implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -39,7 +40,8 @@ dependencies {
    implementation("io.ktor:ktor-serialization-kotlinx-json")
    implementation("io.ktor:ktor-client-content-negotiation")
    implementation("io.ktor:ktor-server-metrics-micrometer")
-   implementation("io.micrometer:micrometer-registry-prometheus:$micrometerVersion")
+   implementation("io.prometheus:simpleclient:${prometheusSimpleclientVersion}")
+   implementation("io.prometheus:simpleclient_common:${prometheusSimpleclientVersion}")
 
    implementation("org.slf4j:slf4j-api:$slf4jVersion")
    implementation("ch.qos.logback:logback-classic:$logbackVersion")
