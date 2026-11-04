@@ -6,6 +6,7 @@ val logbackVersion = "1.6.5"
 val logstashEncoderVersion = "9.0"
 val serializerVersion = "1.12.0"
 val jacksonVersion = "2.22.4"
+val jackson3Version = "3.2.4"
 
 group = "no.nav.helse"
 
@@ -46,6 +47,15 @@ dependencies {
    implementation("org.slf4j:slf4j-api:$slf4jVersion")
    implementation("ch.qos.logback:logback-classic:$logbackVersion")
    implementation("net.logstash.logback:logstash-logback-encoder:$logstashEncoderVersion")
+
+   constraints {
+      implementation("tools.jackson.core:jackson-core:$jackson3Version") {
+         because("logstash-logback-encoder drar inn sårbar Jackson 3")
+      }
+      implementation("tools.jackson.core:jackson-databind:$jackson3Version") {
+         because("logstash-logback-encoder drar inn sårbar Jackson 3")
+      }
+   }
 
    testImplementation("org.jetbrains.kotlin:kotlin-test:2.4.21")
    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
