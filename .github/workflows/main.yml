@@ -1,10 +1,13 @@
-name: Bygg og deploy ved push til master
+name: Bygg og deploy ved push til main
 
 on:
    workflow_dispatch:
    push:
       branches:
-         - master
+         - main
+   schedule:
+      - cron: '35 1 * * 2'
+        timezone: 'Europe/Oslo'
 
 jobs:
    build:
@@ -17,7 +20,7 @@ jobs:
       steps:
          -  uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
          -  uses: ./.github/actions/gradle-build
-         -  uses: nais/docker-build-push@v0
+         -  uses: nais/docker-build-push@dd7421d5068057a020ca46ead966c26190c516b1 # v0
             id: docker-push
             with:
                team: risk
@@ -27,14 +30,14 @@ jobs:
    deploy_to_dev_gcp:
       name: Deploy to devGCP
       needs: build
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       runs-on: ubuntu-latest
       permissions:
          id-token: write
          contents: read
       steps:
          -  uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-         -  uses: nais/deploy/actions/deploy@v3
+         -  uses: nais/deploy/actions/deploy@6a9dcd6df697ec2d38edc78cadb0b9acd1232f50 # v3
             env:
                IMAGE: ${{ needs.build.outputs.IMAGE }}
                CLUSTER: dev-gcp
@@ -44,14 +47,14 @@ jobs:
    deploy_to_prod_gcp:
       name: Deploy to prodGCP
       needs: build
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       runs-on: ubuntu-latest
       permissions:
          id-token: write
          contents: read
       steps:
          -  uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-         -  uses: nais/deploy/actions/deploy@v3
+         -  uses: nais/deploy/actions/deploy@6a9dcd6df697ec2d38edc78cadb0b9acd1232f50 # v3
             env:
                IMAGE: ${{ needs.build.outputs.IMAGE }}
                CLUSTER: prod-gcp
