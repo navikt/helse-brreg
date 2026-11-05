@@ -17,11 +17,6 @@ plugins {
    application
 }
 
-repositories {
-   mavenCentral()
-   maven("https://packages.confluent.io/maven/")
-}
-
 dependencies {
 
    implementation(platform("com.fasterxml.jackson:jackson-bom:$jacksonVersion"))

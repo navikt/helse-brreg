@@ -17,5 +17,4 @@ runs:
       shell: bash
       run: ./gradlew test build
       env:
-        ORG_GRADLE_PROJECT_githubUser: x-access-token
-        ORG_GRADLE_PROJECT_githubPassword: ${{ github.token }}
+        GITHUB_TOKEN: ${{ github.token }}
